@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 
 function HomePage() {
@@ -51,27 +50,39 @@ function HomePage() {
 
   return (
     <main className="relative text-white px-75">
-      <div className="inline-block">
-        <h1 className="font-bold text-7xl mt-40 mb-5">My Portfolio!.</h1>
-        <p className="text-2xl">
+      <section id="home" className="min-h-screen">
+        <h1 className="font-bold text-7xl mt-70 mb-8">My Portfolio!.</h1>
+        <p className="text-2xl text-zinc-300">
           {displayedText}
           <span className="animate-pulse">|</span>
         </p>
-        <div className="buttons flex gap-5 mt-10">
+        <div className="buttons flex gap-5 mt-7">
           <button
             type="button"
-            className=" bg-white dark:text-black no-underline space-x-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-gray-200 p-px font-semibold text-white px-4 py-2 h-14 w-full items-center justify-center rounded-2xl text-center text-sm sm:w-52"
+            className=" bg-white dark:text-black no-underline space-x-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-gray-200 p-px font-semibold text-white px-4 py-2 h-14 w-full items-center justify-center rounded-2xl text-center text-sl sm:w-52"
           >
             Get Started
           </button>
           <button
             type="button"
-            className="border border-purple-500  bg-black dark:text-white no-underline flex space-x-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-purple-900 p-px font-semibold text-white px-4 py-2 h-14 w-full items-center justify-center rounded-2xl text-center text-sm sm:w-52"
+            className="border border-purple-500  bg-black dark:text-white no-underline flex space-x-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-purple-900 p-px font-semibold text-white px-4 py-2 h-14 w-full items-center justify-center rounded-2xl text-center text-sl sm:w-52"
           >
             GitHub
           </button>
         </div>
-      </div>
+      </section>
+
+      <section id="about" className="min-h-screen pt-40 scroll-mt-24">
+        <h2 className="text-6xl font-bold">About</h2>
+      </section>
+
+      <section id="skills" className="min-h-screen pt-40 scroll-mt-24">
+        <h2 className="text-6xl font-bold">Skills</h2>
+      </section>
+
+      <section id="projects" className="min-h-screen pt-40 scroll-mt-24">
+        <h2 className="text-6xl font-bold">Projects</h2>
+      </section>
     </main>
   );
 }

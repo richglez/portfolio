@@ -1,21 +1,32 @@
-import Link from "next/link";
+
 
 export default function Navbar() {
   return (
-    <nav className="bg-black text-white mb-20">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black shadow-md">
       <div className="mx-auto flex justify-between items-center py-3 px-6">
-        <h3 className="font-bold text-3xl">
-          <Link href={'/'}>Rich Portfolio</Link>
+        <h3 className="font-bold text-white text-3xl mx-6">
+          <a href={"/"}>Rich Portfolio</a>
         </h3>
-        <ul className="flex gap-x-2 text-lg font-bold">
+        <ul className="flex gap-x-4 text-lg font-bold text-gray-300">
           <li>
-            <Link href={"/"}>About</Link>
+            <a className="hover:text-white hover:underline" href={"#"}>
+              Home
+            </a>
           </li>
           <li>
-            <Link href={"/"}>Skills</Link>
+            <a className="hover:text-white hover:underline" href={"#about"}>
+              About
+            </a>
           </li>
           <li>
-            <Link href={"/"}>Projects</Link>
+            <a className="hover:text-white hover:underline" href={"#skills"}>
+              Skills
+            </a>
+          </li>
+          <li>
+            <a className="hover:text-white hover:underline" href={"#projects"}>
+              Projects
+            </a>
           </li>
         </ul>
       </div>
