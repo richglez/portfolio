@@ -13,19 +13,21 @@ function HomePage() {
 
   // States
   const [displayedText, setDisplayedText] = useState(""); // Mostrar el texto en pantalla
-  const [isDeleting, setIsDeleting] = useState(false); // Condicional, para saber cuando esta escribiendo o no
+  const [isDeleting, setIsDeleting] = useState(false); // Condicional, para saber cuando esta borrando o no
   const [index, setIndex] = useState(0); // Posicion actual dentro del texto i
 
   useEffect(() => {
     let timeout: NodeJS.Timeout; // para limpiar
 
-    if (!isDeleting && index < text.length) { // si no estamos borrando y tampoco no llegamos al final del texto : escribimos
+    if (!isDeleting && index < text.length) {
+      // si no estamos borrando y tampoco no llegamos al final del texto : escribimos
       // TYPING
       timeout = setTimeout(() => {
-        setDisplayedText((prev) => prev + text[index]);
+        setDisplayedText((prev) => prev + text[index]); // escritura en pantalla
         setIndex((prev) => prev + 1);
       }, typingSpeed);
     } else if (isDeleting && index > 0) {
+      // si estamos borrando y aun hay letras por borrar
       // DELETING
       timeout = setTimeout(() => {
         setDisplayedText((prev) => prev.slice(0, -1));
@@ -37,6 +39,7 @@ function HomePage() {
         setIsDeleting(true);
       }, pauseAfterTyping);
     } else if (isDeleting && index === 0) {
+      // aqui ya se borraron todas las letras
       // PAUSE BEFORE RESTART (🔥 FIX)
       timeout = setTimeout(() => {
         setIsDeleting(false);
@@ -54,6 +57,20 @@ function HomePage() {
           {displayedText}
           <span className="animate-pulse">|</span>
         </p>
+        <div className="buttons flex gap-5 mt-10">
+          <button
+            type="button"
+            className=" bg-white dark:text-black no-underline space-x-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-gray-200 p-px font-semibold text-white px-4 py-2 h-14 w-full items-center justify-center rounded-2xl text-center text-sm sm:w-52"
+          >
+            Get Started
+          </button>
+          <button
+            type="button"
+            className="border border-purple-500  bg-black dark:text-white no-underline flex space-x-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-purple-900 p-px font-semibold text-white px-4 py-2 h-14 w-full items-center justify-center rounded-2xl text-center text-sm sm:w-52"
+          >
+            GitHub
+          </button>
+        </div>
       </div>
     </main>
   );
