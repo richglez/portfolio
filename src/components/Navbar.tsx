@@ -1,5 +1,3 @@
-
-
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black shadow-md">
@@ -7,24 +5,36 @@ export default function Navbar() {
         <h3 className="font-bold text-white text-3xl mx-6">
           <a href={"/"}>Rich Portfolio</a>
         </h3>
-        <ul className="flex gap-x-4 text-lg font-bold text-gray-300">
+        <ul className="flex gap-x-1 text-lg font-bold text-gray-300">
           <li>
-            <a className="hover:text-white hover:underline" href={"#"}>
+            <a
+              className="container py-2 px-4 hover:text-purple-400 hover:underline"
+              href={"#"}
+            >
               Home
             </a>
           </li>
           <li>
-            <a className="hover:text-white hover:underline" href={"#about"}>
+            <a
+              className="container py-2 px-4 hover:text-purple-400 hover:underline"
+              href={"#about"}
+            >
               About
             </a>
           </li>
           <li>
-            <a className="hover:text-white hover:underline" href={"#skills"}>
+            <a
+              className="container py-2 px-4 hover:text-purple-400 hover:underline"
+              href={"#skills"}
+            >
               Skills
             </a>
           </li>
           <li>
-            <a className="hover:text-white hover:underline" href={"#projects"}>
+            <a
+              className="container py-2 px-4 hover:text-purple-400 hover:underline scroll-smooth"
+              href={"#projects"}
+            >
               Projects
             </a>
           </li>
