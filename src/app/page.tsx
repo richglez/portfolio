@@ -2,6 +2,7 @@
 import TypingText from "@/components/TypingText";
 import AbooutSection from '@/components/About'
 import SkillsSection from "../components/Skills";
+import ProjectsSection from "../components/Projects";
 
 function HomePage() {
   return (
@@ -29,14 +30,12 @@ function HomePage() {
         </div>
       </section>
 
+      <AbooutSection />
 
-      <AbooutSection/>
+      <SkillsSection />
 
-      <SkillsSection/>
+        <ProjectsSection />
 
-      <section id="projects" className="min-h-screen pt-40 scroll-mt-24">
-        <h2 className="text-6xl font-bold">Projects</h2>
-      </section>
     </main>
   );
 }

@@ -297,8 +297,9 @@ const SkillsSection = () => {
             <Image
               src={"/new-php-logo.svg"}
               alt="PHP"
-              width={"32"}
-              height={"32"}
+              width={32}
+              height={32}
+              className="w-8 h-8" // 32px = 8 en Tailwind
             ></Image>
           ),
           level: 45,
@@ -369,7 +370,8 @@ const SkillsSection = () => {
               alt="figma-logo"
               width={18}
               height={18}
-            ></Image>
+              className="w-8 h-8" // 32px = 8 en Tailwind
+            />
           ),
           level: 10,
           color: "from-rose-500  via-green-400 to-sky-500",
@@ -382,7 +384,7 @@ const SkillsSection = () => {
               alt="mysql-logo"
               width={32}
               height={32}
-            ></Image>
+            />
           ),
           level: 75,
           color: "from-blue-600 to-amber-400",
@@ -428,6 +430,7 @@ const SkillsSection = () => {
               alt="scss-logo"
               width={32}
               height={32}
+              className="w-8 h-8" // 32px = 8 en Tailwind
             ></Image>
           ),
           level: 65,
@@ -442,6 +445,7 @@ const SkillsSection = () => {
               alt="css-logo"
               width={30}
               height={30}
+              className="w-8 h-8" // 32px = 8 en Tailwind
             ></Image>
           ),
           level: 65,
@@ -457,6 +461,7 @@ const SkillsSection = () => {
               alt="html-logo"
               width={30}
               height={30}
+              className="w-8 h-8" // 32px = 8 en Tailwind
             ></Image>
           ),
           level: 95,
@@ -518,7 +523,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="min-h-screen pt-5 scroll-mt-24">
+    <section id="skills" className="min-h-screen pt-30 pb-70">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -528,7 +533,7 @@ const SkillsSection = () => {
         >
           <h2 className="text-6xl font-bold mb-4 text-white">Skills</h2>
           <p className="text-xl text-zinc-400 mb-12 max-w-2xl">
-            Technologies and tools I use to bring ideas to life
+            <TypingText text="Technologies and tools that I know and still learing.!" />
           </p>
         </motion.div>
 
@@ -619,7 +624,9 @@ const SkillsSection = () => {
             >
               5+
             </motion.div>
-            <div className="text-zinc-400">Years Experience</div>
+            <div className="text-zinc-400">
+              <TypingText text="Years Experience" />
+            </div>
           </motion.div>
 
           <motion.div
@@ -636,7 +643,9 @@ const SkillsSection = () => {
             >
               15+
             </motion.div>
-            <div className="text-zinc-400">Technologies</div>
+            <div className="text-zinc-400">
+              <TypingText text="Technologies" />
+            </div>
           </motion.div>
 
           <motion.div
@@ -653,7 +662,9 @@ const SkillsSection = () => {
             >
               20+
             </motion.div>
-            <div className="text-zinc-400">Projects Built</div>
+            <div className="text-zinc-400">
+              <TypingText text="Projects Built" />
+            </div>
           </motion.div>
         </motion.div>
       </div>

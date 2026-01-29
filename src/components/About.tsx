@@ -2,7 +2,7 @@ import TypingText from "@/components/TypingText";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="min-h-screen pt-40 scroll-mt-24">
+    <section id="about" className="min-h-screen pt-60">
       <h2 className="text-6xl font-bold mb-6">About</h2>
 
       <p className="text-2xl text-zinc-300 max-w-4xl mb-6">
