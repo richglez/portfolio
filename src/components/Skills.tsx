@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 
 const SkillsSection = () => {
   const skills = [
@@ -159,7 +162,7 @@ const SkillsSection = () => {
             </svg>
           ),
           level: 80,
-          color: "from-blue-500 to-blue-700",
+          color: "from-[#2F74C0] to-blue-900",
         },
         {
           name: "JavaScript",
@@ -175,7 +178,7 @@ const SkillsSection = () => {
             </svg>
           ),
           level: 80,
-          color: "from-yellow-400 to-yellow-600",
+          color: "from-yellow-300 to-yellow-600",
         },
         {
           name: "C++",
@@ -195,7 +198,7 @@ const SkillsSection = () => {
             </svg>
           ),
           level: 80,
-          color: "from-sky-500 to-sky-800",
+          color: "from-[#00599C] to-[#3d96d9]",
         },
         {
           name: "C#",
@@ -220,13 +223,20 @@ const SkillsSection = () => {
             </svg>
           ),
           level: 80,
-          color: "from-purple-600 to-purple-800",
+          color: "from-[#9B4F96] to-[#d669cf]",
         },
         {
           name: "Visual Basic",
-          icon: <h3 className="text-blue-500 font-bold">VB</h3>,
+          icon: (
+            <Image
+              src={"/VB.NET_Logo.png"}
+              alt="VB"
+              height={32}
+              width={32}
+            ></Image>
+          ),
           level: 80,
-          color: "from-blue-600 to-blue-800",
+          color: "from-sky-700 to-cyan-600",
         },
         {
           name: "Python",
@@ -239,7 +249,7 @@ const SkillsSection = () => {
             ></Image>
           ),
           level: 80,
-          color: "from-blue-600 to-blue-800",
+          color: "from-[#FDD331] via-teal-600 to-[#2472B2]",
         },
         {
           name: "Java",
@@ -252,45 +262,46 @@ const SkillsSection = () => {
             ></Image>
           ),
           level: 80,
-          color: "from-blue-600 to-blue-800",
+          color: "from-red-600 to-sky-600",
         },
         {
           name: "Prolog",
           icon: (
             <Image
-              src={"/prolog-svgrepo-com (2).svg"}
+              src={"/prolog-original.svg"}
               alt="Java logo"
               width={32}
               height={32}
             ></Image>
           ),
           level: 80,
-          color: "from-blue-600 to-blue-800",
+          color: "from-red-600 to-[#AEB0B3]",
+        },
+        {
+          name: "Assembly",
+          icon: (
+            <Image
+              alt="AssemblyLogo"
+              src={"/icons8-assembly-96.png"}
+              width={"32"}
+              height={"32"}
+            ></Image>
+          ),
+          level: 80,
+          color: "from-[#5B6DC2] to-[#11439D]",
         },
         {
           name: "PHP",
           icon: (
-            <svg
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 bg-white rounded"
-            >
-              <title>PHP</title>
-              <path
-                d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"
-                fill="#777BB4"
-              />
-            </svg>
+            <Image
+              src={"/new-php-logo.svg"}
+              alt="PHP"
+              width={"32"}
+              height={"32"}
+            ></Image>
           ),
           level: 80,
-          color: "from-blue-600 to-blue-800",
-        },
-        {
-          name: "Assembly",
-          icon: "icon-here",
-          level: 80,
-          color: "from-blue-600 to-blue-800",
+          color: "from-[#777BB3] to-blue-950",
         },
       ],
     },
@@ -299,68 +310,154 @@ const SkillsSection = () => {
       items: [
         {
           name: "Git & GitHub",
-          icon: "🐙",
+          icon: (
+            <Image
+              src={"/git-logo-2-Photoroom.png"}
+              alt="git-github"
+              width={32}
+              height={32}
+            ></Image>
+          ),
           level: 85,
-          color: "from-purple-500 to-pink-500",
+          color: "from-orange-600 to-rose-900",
         },
         {
           name: "VS Code",
-          icon: "💻",
+          icon: (
+            <Image
+              src={"/code-stable.png"}
+              alt="vs-code"
+              width={27}
+              height={27}
+            ></Image>
+          ),
           level: 90,
-          color: "from-blue-500 to-indigo-600",
-        },
-        {
-          name: "Atom",
-          icon: "💻",
-          level: 90,
-          color: "from-blue-500 to-indigo-600",
+          color: "from-blue-400 to-blue-700",
         },
         {
           name: "Visual Studio",
-          icon: "💻",
+          icon: (
+            <Image
+              src={"/Visual_Studio_Icon_2019.svg"}
+              alt="vs-code"
+              width={27}
+              height={27}
+            ></Image>
+          ),
+          level: 90,
+          color: "from-purple-500 to-violet-600",
+        },
+        {
+          name: "Atom",
+          icon: (
+            <Image
+              src={"/Atom_1.0_icon.png"}
+              alt="atom"
+              width={32}
+              height={32}
+            ></Image>
+          ),
           level: 90,
           color: "from-blue-500 to-indigo-600",
         },
         {
           name: "Figma",
-          icon: "🎯",
+          icon: (
+            <Image
+              src={"/Figma-logo.svg"}
+              alt="figma-logo"
+              width={18}
+              height={18}
+            ></Image>
+          ),
           level: 70,
           color: "from-pink-500 to-rose-500",
         },
         {
           name: "MySQL",
-          icon: "icon-here",
+          icon: (
+            <Image
+              src={"/mysql-logo-svgrepo-com.svg"}
+              alt="mysql-logo"
+              width={32}
+              height={32}
+            ></Image>
+          ),
           level: 65,
           color: "from-green-600 to-green-800",
         },
         {
           name: "Prisma",
-          icon: "icon-here",
+          icon: (
+            <svg
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#4AB0A7"
+              width={32}
+              height={32}
+            >
+              <title>Prisma</title>
+              <path d="M21.8068 18.2848L13.5528.7565c-.207-.4382-.639-.7273-1.1286-.7541-.5023-.0293-.9523.213-1.2062.6253L2.266 15.1271c-.2773.4518-.2718 1.0091.0158 1.4555l4.3759 6.7786c.2608.4046.7127.6388 1.1823.6388.1332 0 .267-.0188.3987-.0577l12.7019-3.7568c.3891-.1151.7072-.3904.8737-.7553s.1633-.7828-.0075-1.1454zm-1.8481.7519L9.1814 22.2242c-.3292.0975-.6448-.1873-.5756-.5194l3.8501-18.4386c.072-.3448.5486-.3996.699-.0803l7.1288 15.138c.1344.2856-.019.6224-.325.7128z" />
+            </svg>
+          ),
           level: 65,
           color: "from-green-600 to-green-800",
         },
         {
+          //
           name: "MongoDB",
-          icon: "🍃",
+          icon: (
+            <Image
+              src={"/Mongodb-svgrepo-com.png"}
+              alt="mongodb-logo"
+              width={32}
+              height={32}
+            ></Image>
+          ),
           level: 65,
           color: "from-green-600 to-green-800",
         },
         {
+          //seal-color.png
           name: "SCSS",
-          icon: "🍃",
+          icon: (
+            <Image
+              src={"/seal-color.png"}
+              alt="scss-logo"
+              width={32}
+              height={32}
+            ></Image>
+          ),
           level: 65,
           color: "from-green-600 to-green-800",
         },
         {
+          //
           name: "CSS",
-          icon: "🍃",
+          icon: (
+            <Image
+              src={"/CSS3_logo_and_wordmark-pp.png"}
+              alt="css-logo"
+              width={30}
+              height={30}
+            ></Image>
+          ),
           level: 65,
           color: "from-green-600 to-green-800",
         },
 
         {
+          //
           name: "HTML",
-          icon: "🍃",
+          icon: (
+            <Image
+              src={"/HTML5_logo_and_wordmar.png"}
+              alt="html-logo"
+              width={30}
+              height={30}
+            ></Image>
+          ),
           level: 65,
           color: "from-green-600 to-green-800",
         },
@@ -368,18 +465,83 @@ const SkillsSection = () => {
     },
   ];
 
+  // Variantes de animación para contenedores
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  // Variantes para las tarjetas de categorías
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
+  };
+
+  // Variantes para los items dentro de las tarjetas
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  };
+
+  // Variantes para las tarjetas de estadísticas
+  const statsVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 30 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section id="skills" className="min-h-screen pt-5 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-6xl font-bold mb-4 text-white">Skills</h2>
-        <p className="text-xl text-zinc-400 mb-12 max-w-2xl">
-          Technologies and tools I use to bring ideas to life
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-6xl font-bold mb-4 text-white">Skills</h2>
+          <p className="text-xl text-zinc-400 mb-12 max-w-2xl">
+            Technologies and tools I use to bring ideas to life
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        >
           {skills.map((category, categoryIndex) => (
-            <div
+            <motion.div
               key={categoryIndex}
+              variants={cardVariants}
               className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 transition-all duration-300"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
@@ -387,9 +549,19 @@ const SkillsSection = () => {
                 {category.category}
               </h3>
 
-              <div className="space-y-5">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                className="space-y-5"
+              >
                 {category.items.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="group">
+                  <motion.div
+                    key={skillIndex}
+                    variants={itemVariants}
+                    className="group"
+                  >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <span className="text-2xl transform group-hover:scale-125 transition-transform duration-300">
@@ -405,49 +577,85 @@ const SkillsSection = () => {
                     </div>
 
                     <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out transform origin-left`}
-                        style={{
-                          width: `${skill.level}%`,
-                          animation: `growBar 1.5s ease-out ${skillIndex * 0.1}s forwards`,
-                          transform: "scaleX(0)",
+                      <motion.div
+                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 1.5,
+                          delay: skillIndex * 0.1,
+                          ease: "easeOut",
                         }}
-                      ></div>
+                      ></motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-white mb-2">5+</div>
+        {/* Stats Cards con animación */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12"
+        >
+          <motion.div
+            variants={statsVariants}
+            whileHover={{ scale: 1.05, y: -5 }}
+            className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-6 text-center cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-4xl font-bold text-white mb-2"
+            >
+              5+
+            </motion.div>
             <div className="text-zinc-400">Years Experience</div>
-          </div>
-          <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-white mb-2">15+</div>
-            <div className="text-zinc-400">Technologies</div>
-          </div>
-          <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-white mb-2">20+</div>
-            <div className="text-zinc-400">Projects Built</div>
-          </div>
-        </div>
-      </div>
+          </motion.div>
 
-      <style>{`
-        @keyframes growBar {
-          from {
-            transform: scaleX(0);
-          }
-          to {
-            transform: scaleX(1);
-          }
-        }
-      `}</style>
+          <motion.div
+            variants={statsVariants}
+            whileHover={{ scale: 1.05, y: -5 }}
+            className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-xl p-6 text-center cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-4xl font-bold text-white mb-2"
+            >
+              15+
+            </motion.div>
+            <div className="text-zinc-400">Technologies</div>
+          </motion.div>
+
+          <motion.div
+            variants={statsVariants}
+            whileHover={{ scale: 1.05, y: -5 }}
+            className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-6 text-center cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-4xl font-bold text-white mb-2"
+            >
+              20+
+            </motion.div>
+            <div className="text-zinc-400">Projects Built</div>
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };
