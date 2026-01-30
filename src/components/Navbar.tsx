@@ -9,7 +9,7 @@ export default function Navbar() {
           <li>
             <a
               className="container py-2 px-4 hover:text-purple-400 hover:underline"
-              href={"#"}
+              href={"#home"}
             >
               Home
             </a>

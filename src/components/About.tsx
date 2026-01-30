@@ -1,8 +1,9 @@
+import { forwardRef } from "react";
 import TypingText from "@/components/TypingText";
 
-export default function AboutSection() {
+const AboutSection = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <section id="about" className="min-h-screen pt-60">
+    <section id="about" ref={ref} className="min-h-screen scroll-mt-24 pt-60">
       <h2 className="text-6xl font-bold mb-6">About</h2>
 
       <p className="text-2xl text-zinc-300 max-w-4xl mb-6">
@@ -28,10 +29,12 @@ export default function AboutSection() {
           text="Currently, I am building personal projects—including this
           portfolio—while continuing to study new technologies and frameworks to
           grow as a frontend developer."
-        ></TypingText>
+        />
       </p>
     </section>
   );
-}
+});
 
+AboutSection.displayName = "AboutSection";
 
+export default AboutSection;

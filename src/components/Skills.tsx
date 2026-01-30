@@ -523,7 +523,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="min-h-screen pt-30 pb-70">
+    <section id="skills" className="min-h-screen scroll-mt-24 pt-30 pb-70">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
