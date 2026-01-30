@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import TypingText from "./TypingText";
 
 const SkillsSection = () => {
@@ -284,8 +285,8 @@ const SkillsSection = () => {
             <Image
               alt="AssemblyLogo"
               src={"/icons8-assembly-96.png"}
-              width={"32"}
-              height={"32"}
+              width={32}
+              height={32}
             ></Image>
           ),
           level: 50,
@@ -472,7 +473,7 @@ const SkillsSection = () => {
   ];
 
   // Variantes de animación para contenedores
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -483,7 +484,7 @@ const SkillsSection = () => {
   };
 
   // Variantes para las tarjetas de categorías
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 50, scale: 0.9 },
     visible: {
       opacity: 1,
@@ -497,7 +498,7 @@ const SkillsSection = () => {
   };
 
   // Variantes para los items dentro de las tarjetas
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
@@ -509,7 +510,7 @@ const SkillsSection = () => {
   };
 
   // Variantes para las tarjetas de estadísticas
-  const statsVariants = {
+  const statsVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8, y: 30 },
     visible: {
       opacity: 1,
@@ -523,7 +524,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="min-h-screen scroll-mt-24 pt-30 pb-70">
+    <section id="skills" className="min-h-screen scroll-mt-24 pt-5 mb-120">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -551,7 +552,7 @@ const SkillsSection = () => {
               className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 transition-all duration-300"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gradient-to-red from-purple-500 to-pink-500"></span>
+                <span className="w-2 h-2 rounded-full bg-purple-500 to-pink-500"></span>
                 {category.category}
               </h3>
 
@@ -584,7 +585,7 @@ const SkillsSection = () => {
 
                     <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
                       <motion.div
-                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
+                        className={`h-full bg-linear-to-r ${skill.color} rounded-full`}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}

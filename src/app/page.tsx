@@ -8,8 +8,8 @@ import ProjectsSection from "../components/Projects";
 function HomePage() {
   return (
     <main className="relative text-white px-75">
-      <section id="home" className="min-h-screen scroll-mt-70">
-        <h1 className="font-bold text-7xl mt-70 mb-8">My Portfolio!.</h1>
+      <section id="home" className="min-h-screen scroll-mt-70 mb-50">
+        <h1 className="font-bold text-7xl pt-70 mb-8">My Portfolio!.</h1>
         <p className="text-2xl text-zinc-300">
           <TypingText text="Personal portfolio to showcase my projects, skills, and experience as a developer." />
         </p>

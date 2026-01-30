@@ -3,7 +3,11 @@ import TypingText from "@/components/TypingText";
 
 const AboutSection = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <section id="about" ref={ref} className="min-h-screen scroll-mt-24 pt-60">
+    <section
+      id="about"
+      ref={ref}
+      className="min-h-screen scroll-mt-24 pt-40 mb-50"
+    >
       <h2 className="text-6xl font-bold mb-6">About</h2>
 
       <p className="text-2xl text-zinc-300 max-w-4xl mb-6">
