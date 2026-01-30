@@ -28,13 +28,26 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
         easily, and enjoy collaborating with multidisciplinary teams.
       </p>
 
-      <p className="text-xl text-zinc-400 max-w-4xl">
+      <p className="text-xl text-purple-400 max-w-4xl">
         <TypingText
           text="Currently, I am building personal projects—including this
           portfolio—while continuing to study new technologies and frameworks to
           grow as a frontend developer."
         />
       </p>
+
+      <h3 className="text-3xl font-bold mt-20">Education</h3>
+      <ul className="text-xl">
+        <li>
+          <p className="text-zinc-300">2020 - 2025</p>
+          <p className="text-zinc-300">Universidad del Valle de México</p>
+          <p className="text-purple-400">
+            Ingeniería En Sistemas Computacionales
+          </p>
+        </li>
+
+        <li></li>
+      </ul>
     </section>
   );
 });
