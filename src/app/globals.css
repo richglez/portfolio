@@ -9,15 +9,51 @@ html {
 }
 
 @keyframes neonFlicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
     opacity: 1;
     text-shadow:
       0 0 6px #c084fc,
       0 0 14px #a855f7,
       0 0 28px #9333ea;
   }
-  20%, 24%, 55% {
+  20%,
+  24%,
+  55% {
     opacity: 0.4;
     text-shadow: none;
   }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.neon-glow {
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+}
+.glow-button {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+  transition: all 0.3s ease;
+}
+.glow-button:hover {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+}
+.gradient-text {
+  background: linear-gradient(to right, #ffffff, #a855f7);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-mesh {
+  background-image:
+    radial-gradient(at 0% 0%, hsla(273, 67%, 30%, 0.15) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(273, 67%, 30%, 0.1) 0, transparent 50%);
 }

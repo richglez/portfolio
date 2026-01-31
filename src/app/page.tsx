@@ -6,7 +6,7 @@ import ProjectsSection from "../components/Projects";
 
 function HomePage() {
   return (
-    <main className="relative text-white px-75 pt-55">
+    <main className="relative text-white px-75 pt-50">
       <section id="home" className="min-h-screen scroll-mt-70">
         <span
           className="inline-flex items-center gap-2
@@ -35,8 +35,8 @@ function HomePage() {
           Ready to Innovate
         </span>
 
-        <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-tight mb-9">
-          My <span className="gradient-text">Portfolio!.</span>
+        <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-tight mb-7">
+          My <br /> <span className="gradient-text">Portfolio!.</span>
         </h1>
         <p className="text-[27px] mb-5 font-bold uppercase tracking-widest text-purple-400 animate-neonFlicker">
           Computer Systems Engineer
