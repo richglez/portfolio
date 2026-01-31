@@ -79,10 +79,10 @@ function ProjectsSection() {
         {repos.map((repo) => (
           <div
             key={repo.id}
-            className="group relative bg-gradient-to-br from-zinc-900 to-zinc-950 rounded-2xl p-6 border border-zinc-800 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1"
+            className="group relative bg-linear-to-br from-zinc-900 to-zinc-950 rounded-2xl p-6 border border-zinc-800 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1"
           >
             {/* Gradient overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-blue-500/0 group-hover:from-purple-500/5 group-hover:to-blue-500/5 rounded-2xl transition-all duration-300" />
+            <div className="absolute inset-0 bg-linear-to-br from-purple-500/0 to-blue-500/0 group-hover:from-purple-500/5 group-hover:to-blue-500/5 rounded-2xl transition-all duration-300" />
 
             <div className="relative">
               {/* Header with language indicator */}
@@ -118,7 +118,7 @@ function ProjectsSection() {
               </h3>
 
               {/* Description */}
-              <p className="text-zinc-400 text-sm mb-4 line-clamp-2 min-h-[40px]">
+              <p className="text-zinc-400 text-sm mb-4 line-clamp-2 min-h-10">
                 {repo.description || "No description available"}
               </p>
 
