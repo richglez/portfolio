@@ -1,48 +1,44 @@
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg shadow-md">
-      <div className="mx-auto flex justify-between items-center py-3 px-6">
-        <h3 className="font-bold text-white text-3xl mx-6">
-          <a href={"/"}> &lt;Rich Portfolio/&gt;</a>
-        </h3>
-        <ul className="flex gap-x-1 text-lg font-bold text-gray-300">
+    <header className="fixed top-6 left-0 w-full z-50 px-6">
+      <nav className="max-w-6xl mx-auto flex items-center justify-between bg- glass rounded-2xl px-8 py-4 bg-black/30 backdrop-blur-lg shadow-md">
+        {/* Logo */}
+        <a
+          href={"/"}
+          className="text-2xl font-bold tracking-tight gradient-text"
+        >
+          &lt;Rich Portfolio/&gt;
+        </a>
+
+        {/* Links */}
+        <ul className="hidden md:flex items-center gap-10 text-gray-300 font-medium">
           <li>
-            <a
-              className="container py-2 px-4 hover:text-purple-400 hover:underline"
-              href={"#home"}
-            >
+            <a className="hover:text-purple-400 transition" href="#home">
               Home
             </a>
           </li>
           <li>
-            <a
-              className="container py-2 px-4 hover:text-purple-400 hover:underline"
-              href={"#about"}
-            >
+            <a className="hover:text-purple-400 transition" href="#about">
               About
             </a>
           </li>
           <li>
-            <a
-              className="container py-2 px-4 hover:text-purple-400 hover:underline"
-              href={"#skills"}
-            >
+            <a className="hover:text-purple-400 transition" href="#skills">
               Skills
             </a>
           </li>
           <li>
-            <a
-              className="container py-2 px-4 hover:text-purple-400 hover:underline scroll-smooth"
-              href={"#projects"}
-            >
+            <a className="hover:text-purple-400 transition" href="#projects">
               Projects
             </a>
           </li>
         </ul>
-        <button className="bg-purple-500 hover:bg-opacity-90 text-white px-5 py-2 rounded-xl font-semibold transition-all shadow-lg shadow-primary/20">
+
+        {/* Button */}
+        <button className="glow-button bg-purple-600 hover:bg-purple-500 text-white px-6 py-2 rounded-xl font-semibold transition-all">
           Let&apos;s Talk
         </button>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
