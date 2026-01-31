@@ -39,6 +39,9 @@ export default function Navbar() {
             </a>
           </li>
         </ul>
+        <button className="bg-purple-500 hover:bg-opacity-90 text-white px-5 py-2 rounded-xl font-semibold transition-all shadow-lg shadow-primary/20">
+          Let&apos;s Talk
+        </button>
       </div>
     </nav>
   );

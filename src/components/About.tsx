@@ -41,12 +41,8 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
         <li>
           <p className="text-zinc-300">2020 - 2025</p>
           <p className="text-zinc-300">Universidad del Valle de México</p>
-          <p className="text-purple-400">
-            Ingeniería En Sistemas Computacionales
-          </p>
+          <p className="text-purple-400">Computer Systems Engineering</p>
         </li>
-
-        <li></li>
       </ul>
     </section>
   );

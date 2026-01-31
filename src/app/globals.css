@@ -3,3 +3,21 @@
 html {
   scroll-behavior: smooth;
 }
+
+@theme {
+  --animate-neonFlicker: neonFlicker 3s infinite;
+}
+
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 6px #c084fc,
+      0 0 14px #a855f7,
+      0 0 28px #9333ea;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}

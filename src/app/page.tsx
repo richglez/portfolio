@@ -1,12 +1,12 @@
 "use client";
 import TypingText from "@/components/TypingText";
-import AbooutSection from "@/components/About";
+import AboutSection from "@/components/About";
 import SkillsSection from "../components/Skills";
 import ProjectsSection from "../components/Projects";
 
 function HomePage() {
   return (
-    <main className="relative text-white px-75 pt-70">
+    <main className="relative text-white px-75 pt-55">
       <section id="home" className="min-h-screen scroll-mt-70">
         <span
           className="inline-flex items-center gap-2
@@ -35,9 +35,14 @@ function HomePage() {
           Ready to Innovate
         </span>
 
-        <h1 className="font-bold text-7xl pt-4 mb-8">My Portfolio!.</h1>
-        <p className="text-2xl mb-5 text-zinc-200">Computer Systems Engineer</p>
-        <p className="text-lg text-zinc-300">
+        <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-tight mb-9">
+          My <span className="gradient-text">Portfolio!.</span>
+        </h1>
+        <p className="text-[27px] mb-5 font-bold uppercase tracking-widest text-purple-400 animate-neonFlicker">
+          Computer Systems Engineer
+        </p>
+
+        <p className="text-[25px] text-zinc-300">
           <TypingText text="Personal portfolio to showcase my projects, skills, and experience as a developer." />
         </p>
         <div className="buttons flex gap-5 mt-10">
@@ -138,7 +143,7 @@ function HomePage() {
         </div>
       </section>
 
-      <AbooutSection />
+      <AboutSection />
 
       <SkillsSection />
 
