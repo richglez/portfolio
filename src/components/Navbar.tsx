@@ -1,9 +1,9 @@
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black shadow-md">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-md shadow-md">
       <div className="mx-auto flex justify-between items-center py-3 px-6">
         <h3 className="font-bold text-white text-3xl mx-6">
-          <a href={"/"}>Rich Portfolio</a>
+          <a href={"/"}> &lt;Rich Portfolio/&gt;</a>
         </h3>
         <ul className="flex gap-x-1 text-lg font-bold text-gray-300">
           <li>
