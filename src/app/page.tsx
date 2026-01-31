@@ -41,8 +41,8 @@ function HomePage() {
           <TypingText text="Personal portfolio to showcase my projects, skills, and experience as a developer." />
         </p>
         <div className="buttons flex gap-5 mt-10">
-          <button
-            type="button"
+          <a
+            href="mailto:riichh082002@gmail.com?subject=Contacto%20desde%20tu%20Portfolio&body=Hola%20Ricardo,%0D%0A%0D%0AQuisiera%20ponerme%20en%20contacto%20contigo."
             className="bg-white dark:text-black no-underline flex items-center justify-center gap-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-gray-200 p-px font-semibold text-white px-4 py-2 h-14 w-full rounded-2xl text-center text-sl sm:w-52"
           >
             Contact
@@ -60,7 +60,7 @@ function HomePage() {
                 d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
               />
             </svg>
-          </button>
+          </a>
           <a
             href="https://github.com/richglez"
             target="_blank"
@@ -120,7 +120,7 @@ function HomePage() {
             </svg>
           </a>
           <a
-            href="https://github.com/richglez"
+            href="https://wa.me/525512017729?text=¡Hola%20Ricardo!%20Vi%20tu%20portfolio%20y%20me%20interesó%20tu%20trabajo%20como%20desarrollador."
             target="_blank"
             rel="noopener noreferrer"
             className="relative inline-flex border border-purple-500 shadow-2xl shadow-purple-500 py-4 px-4 rounded-2xl overflow-hidden group"
