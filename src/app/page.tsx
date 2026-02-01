@@ -13,17 +13,8 @@ function HomePage() {
         className="min-h-screen scroll-mt-24 grid lg:grid-cols-2 gap-70 items-center"
       >
         {/* LEFT */}
-        <div className="leftSide">
-          <span
-            className="inline-flex items-center gap-2
-           px-4 py-2 mb-4
-           rounded-full
-           bg-purple-900/120
-           text-purple-200
-           text-sm font-medium
-           backdrop-blur-md
-           shadow-lg shadow-purple-500/50"
-          >
+        <div className="leftSide space-y-4">
+          <span className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs font-mono uppercase tracking-widest text-primary border-primary/20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -41,20 +32,21 @@ function HomePage() {
             Ready to Innovate
           </span>
 
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-tight mb-7">
-            My <br /> <span className="gradient-text">Portfolio!.</span>
+          <h1 className="flex items-baseline text-6xl md:text-8xl font-black tracking-tight leading-tight mb-1 md:mb-2">
+            My
+            <span className="ml-5 md:ml-8 gradient-text">Portfolio!.</span>
           </h1>
-          <p className="text-[27px] mb-5 font-bold uppercase tracking-widest text-purple-400 animate-neon-flicker">
+          <p className="text-[27px] font-semibold uppercase tracking-widest text-purple-400 animate-neon-flicker mt-0 md:mt-1">
             Computer Systems Engineer
           </p>
 
-          <p className="text-[25px] text-zinc-300 min-h-20">
+          <p className="text-[24px] text-slate-400  min-h-20">
             <TypingText text="Personal portfolio to showcase my projects, skills, and experience as a developer." />
           </p>
           <div className="buttons flex gap-5 mt-10">
             <a
               href="mailto:riichh082002@gmail.com?subject=Contacto%20desde%20tu%20Portfolio&body=Hola%20Ricardo,%0D%0A%0D%0AQuisiera%20ponerme%20en%20contacto%20contigo."
-              className="bg-white dark:text-black no-underline flex items-center justify-center gap-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-gray-200 p-px font-semibold text-white px-4 py-2 h-14 w-full rounded-2xl text-center text-sl sm:w-52"
+              className="bg-white border-white/20 dark:text-slate-900 no-underline flex items-center justify-center gap-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-gray-200 p-px font-bold text-white px-8 py-4 rounded-xl text-center"
             >
               Contact
               <svg
@@ -76,7 +68,7 @@ function HomePage() {
               href="https://github.com/richglez"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-purple-500 bg-black dark:text-white no-underline flex gap-2 space-x-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-purple-900 p-px font-semibold text-white px-4 py-2 h-14 w-full items-center justify-center rounded-2xl text-center text-sl sm:w-52"
+              className="border border-purple-500 bg-black dark:text-white no-underline flex gap-2 space-x-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-purple-900 p-px font-bold text-white px-8 py-4 items-center justify-center rounded-xl text-center"
             >
               GitHub
               <svg
@@ -95,7 +87,7 @@ function HomePage() {
               </svg>
             </a>
           </div>
-          <div className="socials-icons mt-7 flex gap-4.5">
+          <div className="socials-icons pt-6 flex gap-4.5">
             <a
               href="https://www.linkedin.com/in/ricardo-gonzalez-59736b2b7/"
               target="_blank"
