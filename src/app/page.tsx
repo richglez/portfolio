@@ -151,15 +151,44 @@ function HomePage() {
 
         {/* RIGHT IMAGE */}
         <div className="rightSide relative w-full h-125">
-          <Image
-            src="/hero.png"
-            alt="Hero Image"
-            fill
-            priority
-            className="object-contain drop-shadow-2xl"
-          />
+          <div className="relative flex justify-center lg:justify-end items-center">
+            <div className="relative w-full max-w-lg aspect-square">
+              <div className="absolute inset-0 glass rounded-3xl overflow-hidden border-white/5 shadow-2xl animate-float">
+                <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-transparent to-blue-500/20"></div>
+                <div className="absolute inset-0 opacity-30 bg-[radial-gradient(#a855f7_1px,transparent_1px)] bg-size-[30px_30px]"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4">
+                  <div className="absolute inset-0 bg-primary blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                  <Image
+                    src="/hero.png"
+                    alt="Hero Futuristic Abstract Technology"
+                    fill
+                    priority
+                    className="w-full h-full object-cover rounded-2xl mix-blend-screen opacity-60"
+                  />
+                  <div className="absolute top-10 left-10 w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8)] animate-pulse"></div>
+                  <div className="absolute bottom-20 right-10 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_15px_rgba(96,165,250,0.8)] animate-pulse animation-delay: 1s"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
         {/* <div className="absolute inset-0 bg-primary blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity"></div> */}
+        {/* <pre className="text-[10px] md:text-xs font-mono text-slate-400">
+          <span className="text-primary">class</span>{" "}
+          <span className="text-blue-400">Innovation</span> {"{"}
+          {"\n  "}
+          <span className="text-amber-400">constructor</span>
+          {"() {"}
+          {"\n    "}
+          <span className="text-slate-200">this</span>.vision ={" "}
+          <span className="text-emerald-400">&quot;Future-Proof&quot;</span>;
+          {"\n    "}
+          <span className="text-slate-200">this</span>.status ={" "}
+          <span className="text-emerald-400">&quot;Deploying&quot;</span>;
+          {"\n  }"}
+          {"\n}"}
+        </pre> */}
       </section>
 
       <AboutSection />
