@@ -1,8 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "skills", "projects"];
+      const scrollPosition = window.scrollY + 200; // offset para activar antes
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // ejecutar al montar
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="fixed top-6 left-0 w-full z-50 px-6">
       <motion.nav
@@ -12,7 +41,7 @@ export default function Navbar() {
           duration: 0.9,
           ease: "easeInOut",
         }}
-        style={{ originX: 0.5 }} // 👈 desde el centro
+        style={{ originX: 0.5 }}
         className="w-[95%] mx-auto grid grid-cols-[auto_1fr_auto] items-center glass rounded-2xl px-8 py-4 bg-black/30 backdrop-blur-lg shadow-md"
       >
         {/* LEFT — Logo */}
@@ -25,16 +54,26 @@ export default function Navbar() {
 
         {/* CENTER — Links */}
         <ul className="hidden md:flex w-full justify-center text-gray-300 font-medium">
-          {["Home", "About", "Skills", "Projects"].map((item) => (
-            <li key={item}>
-              <a
-                href={`#${item.toLowerCase()}`}
-                className="hover:text-purple-400 transition hover:underline inline-block py-2 px-5 hover:bg-purple-500/10 rounded-lg"
-              >
-                {item}
-              </a>
-            </li>
-          ))}
+          {["Home", "About", "Skills", "Projects"].map((item) => {
+            const isActive = activeSection === item.toLowerCase();
+            return (
+              <li key={item}>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className={`
+                    transition inline-block py-2 px-5 rounded-lg
+                    ${
+                      isActive
+                        ? "text-purple-400 bg-purple-500/20 font-bold"
+                        : "hover:text-purple-400 hover:bg-purple-500/10 hover:underline"
+                    }
+                  `}
+                >
+                  {item}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* RIGHT — Button */}
