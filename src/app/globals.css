@@ -12,6 +12,14 @@ html {
   --color-primary: #a855f7;
 }
 
+@layer components {
+  .bg-mesh {
+    background-image:
+      radial-gradient(at 0% 0%, hsla(273, 67%, 30%, 0.15) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(273, 67%, 30%, 0.1) 0, transparent 50%);
+  }
+}
+
 @keyframes neonFlicker {
   0%,
   19%,
@@ -55,9 +63,4 @@ html {
   background: linear-gradient(to right, #ffffff, #a855f7);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.bg-mesh {
-  background-image:
-    radial-gradient(at 0% 0%, hsla(273, 67%, 30%, 0.15) 0, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(273, 67%, 30%, 0.1) 0, transparent 50%);
 }

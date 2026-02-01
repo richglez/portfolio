@@ -8,7 +8,7 @@ import Image from "next/image";
 function HomePage() {
   return (
     <>
-      <main className="relative text-white px-75 pt-10">
+      <main className="relative text-white px-75 pt-10 bg-mesh">
         <section
           id="home"
           className="min-h-screen scroll-mt-24 grid lg:grid-cols-2 gap-70 items-center"
