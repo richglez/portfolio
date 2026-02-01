@@ -614,7 +614,7 @@ const SkillsSection = () => {
           <motion.div
             variants={statsVariants}
             whileHover={{ scale: 1.05, y: -5 }}
-            className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-6 text-center cursor-pointer"
+            className="bg-linear-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-6 text-center cursor-pointer"
           >
             <motion.div
               initial={{ scale: 0 }}
@@ -633,7 +633,7 @@ const SkillsSection = () => {
           <motion.div
             variants={statsVariants}
             whileHover={{ scale: 1.05, y: -5 }}
-            className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-xl p-6 text-center cursor-pointer"
+            className="bg-linear-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-xl p-6 text-center cursor-pointer"
           >
             <motion.div
               initial={{ scale: 0 }}
@@ -652,7 +652,7 @@ const SkillsSection = () => {
           <motion.div
             variants={statsVariants}
             whileHover={{ scale: 1.05, y: -5 }}
-            className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-6 text-center cursor-pointer"
+            className="bg-linear-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-6 text-center cursor-pointer"
           >
             <motion.div
               initial={{ scale: 0 }}

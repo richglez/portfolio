@@ -5,7 +5,11 @@ html {
 }
 
 @theme {
-  --animate-neonFlicker: neonFlicker 3s infinite;
+  /* Animaciones personalizadas */
+  --animate-neon-flicker: neonFlicker 3s infinite; /* Animacion de luz descompuesta neon type syanthwave/retro/cyberpunk en lema*/
+
+  /* Colores personalizados */
+  --color-primary: #a855f7;
 }
 
 @keyframes neonFlicker {

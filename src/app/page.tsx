@@ -44,7 +44,7 @@ function HomePage() {
           <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-tight mb-7">
             My <br /> <span className="gradient-text">Portfolio!.</span>
           </h1>
-          <p className="text-[27px] mb-5 font-bold uppercase tracking-widest text-purple-400 animate-neonFlicker">
+          <p className="text-[27px] mb-5 font-bold uppercase tracking-widest text-purple-400 animate-neon-flicker">
             Computer Systems Engineer
           </p>
 
@@ -159,6 +159,7 @@ function HomePage() {
             className="object-contain drop-shadow-2xl"
           />
         </div>
+        {/* <div className="absolute inset-0 bg-primary blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity"></div> */}
       </section>
 
       <AboutSection />
