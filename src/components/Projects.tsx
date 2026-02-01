@@ -70,7 +70,10 @@ function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="min-h-screen scroll-mt-24 pt-20 ">
+    <section
+      id="projects"
+      className="min-h-screen scroll-mt-24 pt-20 text-white px-75 "
+    >
       <h2 className="text-6xl font-bold mb-4">Projects</h2>
       <p className="text-zinc-400 text-xl mb-8">
         Check out some of my recent work from GitHub

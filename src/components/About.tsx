@@ -6,7 +6,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     <section
       id="about"
       ref={ref}
-      className="min-h-screen scroll-mt-24 pt-40 mb-50"
+      className="min-h-screen scroll-mt-24 pt-40 mb-50 text-white px-75"
     >
       <h2 className="text-6xl font-bold mb-6">About</h2>
 
