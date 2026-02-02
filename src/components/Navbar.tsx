@@ -53,7 +53,7 @@ export default function Navbar() {
           </a>
 
           {/* CENTER — Links */}
-          <ul className="hidden md:flex w-full justify-center text-gray-300 font-medium">
+          <ul className="hidden md:flex w-full justify-center text-slate-400 font-medium">
             {["Home", "About", "Skills", "Projects"].map((item) => {
               const isActive = activeSection === item.toLowerCase();
               return (
