@@ -47,14 +47,14 @@ function HomePage() {
             <div className="buttons flex gap-5 mt-10">
               <a
                 href="mailto:riichh082002@gmail.com?subject=Contacto%20desde%20tu%20Portfolio&body=Hola%20Ricardo,%0D%0A%0D%0AQuisiera%20ponerme%20en%20contacto%20contigo."
-                className="bg-white border-white/20 dark:text-slate-900 no-underline flex items-center justify-center gap-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-gray-200 p-px font-bold text-white px-8 py-4 rounded-xl text-center"
+                className="bg-white border-white/20 dark:text-slate-900 no-underline flex items-center justify-center gap-2 group cursor-pointer hover:shadow-2xl transition duration-200 shadow-gray-200 font-bold text-white  h-14 w-40 rounded-xl text-center active:scale-95"
               >
                 Contact
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth="1.5"
+                  strokeWidth={"2.5"}
                   stroke="currentColor"
                   className="w-5 h-5"
                 >
@@ -69,14 +69,14 @@ function HomePage() {
                 href="https://github.com/richglez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-purple-500 bg-black dark:text-white no-underline flex gap-2 space-x-2 group cursor-pointer relative hover:shadow-2xl transition duration-200 shadow-purple-900 p-px font-bold text-white px-8 py-4 items-center justify-center rounded-xl text-center"
+                className="border border-purple-500 bg-black dark:text-white no-underline flex gap-2 group cursor-pointer hover:shadow-2xl transition duration-200 shadow-purple-900 font-bold text-white  h-14 w-40 items-center justify-center rounded-xl text-center active:scale-95"
               >
-                GitHub
+                Projects
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth={1.5}
+                  strokeWidth={2.5}
                   stroke="currentColor"
                   className="w-5 h-5"
                 >
