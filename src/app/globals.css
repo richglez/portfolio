@@ -1,15 +1,47 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* ────────────────────────────────────────────────
+   Aquí va toda tu personalización de tema
+───────────────────────────────────────────────── */
 @theme {
-  /* Animaciones personalizadas */
-  --animate-neon-flicker: neonFlicker 3s infinite; /* Animacion de luz descompuesta neon type syanthwave/retro/cyberpunk en lema*/
+  /* Dark mode sigue siendo "class" por defecto en v4,
+     así que no necesitas poner nada extra aquí */
 
   /* Colores personalizados */
   --color-primary: #a855f7;
+  --color-background-light: #f8fafc;
+  --color-background-dark: #050505;
+
+  /* Fuentes */
+  --font-display: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* border-radius por defecto (reemplaza el DEFAULT) */
+  --radius: 0.75rem;
+  /* si quieres que rounded use este valor por defecto */
+  --radius-default: 0.75rem; /* o simplemente --radius */
+
+  /* Animaciones personalizadas */
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  /* Keyframes personalizados (estos van FUERA de @theme) */
+}
+
+/* Keyframes van en la capa base o sin capa */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* El resto de tu CSS (ya lo tenías bien) */
+html {
+  scroll-behavior: smooth;
 }
 
 @layer components {
@@ -20,35 +52,13 @@ html {
   }
 }
 
-@keyframes neonFlicker {
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    opacity: 1;
-    text-shadow:
-      0 0 6px #c084fc,
-      0 0 14px #a855f7,
-      0 0 28px #9333ea;
-  }
-  20%,
-  24%,
-  55% {
-    opacity: 0.4;
-    text-shadow: none;
-  }
-}
-
 .glass {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .neon-glow {
   text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
 }
