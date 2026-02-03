@@ -40,25 +40,28 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           grow as a frontend and backend developer."
         />
       </p>
-      <a
-        href=""
+      {/* Botón de Vista Previa */}
+      <button
+        onClick={() => setShowPreview(true)}
         className="group flex items-center justify-center gap-3
-             rounded-2xl bg-linear-to-r from-purple-600 to-purple-700
-            h-14 w-45 font-semibold text-white no-underline
+             rounded-2xl bg-gradient-to-r from-purple-600 to-purple-700
+            h-14 w-45 font-semibold text-white
              shadow-lg shadow-purple-900/40
              hover:shadow-xl hover:scale-105 hover:from-purple-500 hover:to-purple-600
              active:scale-95 transition-all duration-200"
       >
-        Download CV
+        CV Preview
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 -960 960 960"
+          viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-6 h-6 transition-transform group-hover:translate-y-0.5"
+          className="w-6 h-6 transition-transform group-hover:scale-110"
         >
-          <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM200-160q-33 0-56.5-23.5T120-240v-120h80v120h560v-120h80v120q0 33-23.5 56.5T760-160H200Z" />
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
         </svg>
-      </a>
+      </button>
+
+      
 
       <h3 className="text-3xl font-bold mt-20">Education</h3>
       <ul className="text-xl">

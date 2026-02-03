@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* ────────────────────────────────────────────────
    Aquí va toda tu personalización de tema
 ───────────────────────────────────────────────── */
@@ -24,6 +30,7 @@
   /* Animaciones personalizadas */
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float: float 6s ease-in-out infinite;
+  --animate-neonFlicker: neonFlicker 2s infinite;
 
   /* Keyframes personalizados (estos van FUERA de @theme) */
 }
@@ -39,10 +46,31 @@
   }
 }
 
-/* El resto de tu CSS (ya lo tenías bien) */
-html {
-  scroll-behavior: smooth;
+@keyframes neonFlicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+    text-shadow:
+      0 0 6px #c084fc,
+      0 0 14px #a855f7,
+      0 0 28px #9333ea;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
 }
+
+
+
 
 @layer components {
   .bg-mesh {
@@ -51,6 +79,8 @@ html {
       radial-gradient(at 100% 0%, hsla(273, 67%, 30%, 0.1) 0, transparent 50%);
   }
 }
+
+
 
 .glass {
   background: rgba(255, 255, 255, 0.03);

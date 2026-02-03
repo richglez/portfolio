@@ -38,7 +38,7 @@ function HomePage() {
               My
               <span className="ml-5 md:ml-8 gradient-text">Portfolio!.</span>
             </h1>
-            <p className="text-[27px] font-semibold uppercase tracking-widest text-purple-400 animate-neon-flicker mt-0 md:mt-1">
+            <p className="text-[27px] font-bold uppercase tracking-widest text-purple-400 neon-glow animate-neonFlicker mt-0 md:mt-1">
               Computer Systems Engineer
             </p>
 
