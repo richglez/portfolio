@@ -1,7 +1,12 @@
+"use client";
+
+import {useState} from 'react';
 import { forwardRef } from "react";
 import TypingText from "@/components/TypingText";
 
+
 const AboutSection = forwardRef<HTMLElement>((props, ref) => {
+  const [showPreview, setShowPreview] = useState(false);
   return (
     <section
       id="about"
@@ -35,40 +40,23 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           grow as a frontend and backend developer."
         />
       </p>
-
       <a
         href=""
-        className="border border-purple-900 bg-purple-600 dark:text-white no-underline flex items-center justify-center text-center gap-2 group cursor-pointer hover:shadow-2xl hover:bg-purple-500  transition duration-200 shadow-purple-900 p-px font-bold text-white  h-14 w-40  rounded-xl active:scale-95"
+        className="group flex items-center justify-center gap-3
+             rounded-2xl bg-linear-to-r from-purple-600 to-purple-700
+            h-14 w-45 font-semibold text-white no-underline
+             shadow-lg shadow-purple-900/40
+             hover:shadow-xl hover:scale-105 hover:from-purple-500 hover:to-purple-600
+             active:scale-95 transition-all duration-200"
       >
         Download CV
         <svg
-          viewBox="0 0 24 24"
-          fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6"
+          viewBox="0 -960 960 960"
+          fill="currentColor"
+          className="w-6 h-6 transition-transform group-hover:translate-y-0.5"
         >
-          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            {" "}
-            <path
-              d="M17 9.00195C19.175 9.01406 20.3529 9.11051 21.1213 9.8789C22 10.7576 22 12.1718 22 15.0002V16.0002C22 18.8286 22 20.2429 21.1213 21.1215C20.2426 22.0002 18.8284 22.0002 16 22.0002H8C5.17157 22.0002 3.75736 22.0002 2.87868 21.1215C2 20.2429 2 18.8286 2 16.0002L2 15.0002C2 12.1718 2 10.7576 2.87868 9.87889C3.64706 9.11051 4.82497 9.01406 7 9.00195"
-              stroke="#ffffff"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            ></path>{" "}
-            <path
-              d="M12 2L12 15M12 15L9 11.5M12 15L15 11.5"
-              stroke="#ffffff"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>{" "}
-          </g>
+          <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM200-160q-33 0-56.5-23.5T120-240v-120h80v120h560v-120h80v120q0 33-23.5 56.5T760-160H200Z" />
         </svg>
       </a>
 
