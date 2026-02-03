@@ -9,6 +9,7 @@ function HomePage() {
   return (
     <>
       <main className="relative text-white px-75 pt-10 bg-mesh">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         <section
           id="home"
           className="min-h-screen scroll-mt-24 grid lg:grid-cols-2 gap-70 items-center"
@@ -150,54 +151,54 @@ function HomePage() {
                   <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-transparent to-blue-500/20"></div>
                   <div className="absolute inset-0 opacity-30 bg-[radial-gradient(#a855f7_1px,transparent_1px)] bg-size-[30px_30px]"></div>
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4">
-                    <div className="absolute inset-0 bg-primary blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                    <Image
-                      src="/hero.png"
-                      alt="Hero Futuristic Abstract Technology"
-                      fill
-                      priority
-                      className="w-full h-full object-cover rounded-2xl mix-blend-screen opacity-60"
-                    />
-                    <div className="absolute top-10 left-10 w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8)] animate-pulse"></div>
-                    <div className="absolute bottom-20 right-10 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_15px_rgba(96,165,250,0.8)] animate-pulse animation-delay: 1s"></div>
-                    <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full animate-ping [animation-duration:3s]"></div>
+                    <div className="w-full h-full relative group">
+                      <div className="absolute inset-0 bg-primary blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                      <Image
+                        src="/hero.png"
+                        alt="Hero Futuristic Abstract Technology"
+                        fill
+                        priority
+                        className="w-full h-full object-cover rounded-2xl mix-blend-screen opacity-60"
+                      />
+                      <div className="absolute top-10 left-10 w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8)] animate-pulse"></div>
+                      <div className="absolute bottom-20 right-10 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_15px_rgba(96,165,250,0.8)] animate-pulse animation-delay: 1s"></div>
+                      <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full animate-ping [animation-duration:3s]"></div>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6 p-4 glass rounded-xl border-white/10">
+                    <div className="flex gap-1.5 mb-2">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/50"></div>
+                    </div>
+                    {
+                      <pre className="text-[10px] md:text-xs font-mono text-slate-400">
+                        <span className="text-primary">class</span>{" "}
+                        <span className="text-blue-400">Innovation</span> {"{"}
+                        {"\n  "}
+                        <span className="text-amber-400">constructor</span>
+                        {"() {"}
+                        {"\n    "}
+                        <span className="text-slate-200"> this</span>.vision ={" "}
+                        <span className="text-emerald-400">
+                          &quot;Future-Proof&quot;
+                        </span>
+                        ;{"\n    "}
+                        <span className="text-slate-200"> this</span>.status ={" "}
+                        <span className="text-emerald-400">
+                          &quot;Deploying&quot;
+                        </span>
+                        ;{"\n  }"}
+                        {"\n}"}
+                      </pre>
+                    }
                   </div>
                 </div>
+                <div className="absolute -top-10 -right-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-pulse-slow"></div>
+                <div className="absolute -bottom-10 -left-10 w-48 h-48 border-2 border-primary/10 rounded-full animate-float [animation-duration:8s]"></div>
               </div>
             </div>
-            <div className="absolute bottom-6 left-6 right-6 p-4 glass rounded-xl border-white/10">
-              <div className="flex gap-1.5 mb-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/50"></div>
-              </div>
-              {
-                <pre className="text-[10px] md:text-xs font-mono text-slate-400">
-                  <span className="text-primary">class</span>{" "}
-                  <span className="text-blue-400">Innovation</span> {"{"}
-                  {"\n  "}
-                  <span className="text-amber-400">constructor</span>
-                  {"() {"}
-                  {"\n    "}
-                  <span className="text-slate-200"> this</span>.vision ={" "}
-                  <span className="text-emerald-400">
-                    &quot;Future-Proof&quot;
-                  </span>
-                  ;{"\n    "}
-                  <span className="text-slate-200"> this</span>.status ={" "}
-                  <span className="text-emerald-400">
-                    &quot;Deploying&quot;
-                  </span>
-                  ;{"\n  }"}
-                  {"\n}"}
-                </pre>
-              }
-            </div>
-            <div className="absolute -top-10 -right-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-pulse-slow"></div>
-            <div className="absolute -bottom-10 -left-10 w-48 h-48 border-2 border-primary/10 rounded-full animate-float [animation-duration:8s]"></div>
           </div>
-
-          {/* <div className="absolute inset-0 bg-primary blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity"></div> */}
         </section>
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
