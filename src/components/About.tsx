@@ -44,11 +44,11 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
       <button
         onClick={() => setShowPreview(true)}
         className="group flex items-center justify-center gap-3
-             rounded-2xl bg-gradient-to-r from-purple-600 to-purple-700
+             rounded-2xl bg-linear-to-r from-purple-600 to-purple-700
             h-14 w-45 font-semibold text-white
              shadow-lg shadow-purple-900/40
              hover:shadow-xl hover:scale-105 hover:from-purple-500 hover:to-purple-600
-             active:scale-95 transition-all duration-200"
+             active:scale-95 transition-all duration-200 cursor-pointer"
       >
         CV Preview
         <svg
@@ -61,7 +61,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
         </svg>
       </button>
 
-      
+
 
       <h3 className="text-3xl font-bold mt-20">Education</h3>
       <ul className="text-xl">
