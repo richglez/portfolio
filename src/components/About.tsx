@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const AboutSection = forwardRef<HTMLElement>((props, ref) => {
   const [showPreview, setShowPreview] = useState(false);
+  const CV_PATH = "/cv/cv-RICARDO-GONZALEZ-spanish.pdf";
+
 
   return (
     <section
@@ -115,13 +117,38 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
                   onClick={() => setShowPreview(false)}
                   className="px-6 bg-red-500 rounded-full text-zinc-400 hover:text-white transition active:scale-85"
                 >
-                  ✕
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e3e3e3"
+                    strokeWidth={2.5}
+                  >
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                  </svg>
                 </button>
               </div>
 
               {/* Contenido */}
-              <div className="relative flex-1 p-6 overflow-auto">
-                {/* PDF */}
+              <div className="relative flex flex-col h-full">
+                {/* Toolbar */}
+                <div className="flex items-center justify-end gap-3 p-3 border-b border-white/10 bg-black/20 backdrop-blur-md">
+                  <a
+                    href={CV_PATH}
+                    download
+                    className="px-3 py-1 text-xs rounded-lg bg-purple-600 hover:bg-purple-500 transition"
+                  >
+                    Download
+                  </a>
+                </div>
+
+                {/* PDF preview */}
+                <iframe
+                  src={CV_PATH}
+                  title="CV Preview"
+                  className="w-full flex-1 bg-white"
+                />
               </div>
             </motion.div>
           </motion.div>
