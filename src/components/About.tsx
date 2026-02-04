@@ -25,7 +25,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
       className="min-h-screen scroll-mt-24 pt-20 text-white px-75"
     >
       {/* container centrado */}
-      <div className="">
+      <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* ================= LEFT ================= */}
           <div className="space-y-8">
@@ -132,18 +132,32 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="lg:sticky lg:top-28"
+            className="lg:sticky lg:top-28 flex justify-center"
           >
-            <div className="aspect-square">
-              {/* glow moderno */}
-              <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-full" />
+            <div className="relative aspect-square w-full max-w-md">
+              {/* glow background shadow purple */}
+              <div className="absolute -inset-6 bg-purple-600/30 blur-3xl rounded-full z-0" />
 
-              <Image
+              {/* blur image background */}
+              <motion.img
+                variants={fadeUp}
                 src="/HAU1KitXoAApgsa.jpg"
                 alt="About me image"
-                fill
-                className="object-cover rounded-3xl shadow-2xl border border-white/10"
+                className="absolute bg-purple-600/20 blur-3xl w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10"
+                whileInView="show"
+                custom={5}
               />
+              <motion.img
+                variants={fadeUp}
+                src="/HAU1KitXoAApgsa.jpg"
+                alt="About me image"
+                className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10 z-20"
+                initial="hidden"
+                whileInView="show"
+                custom={5}
+              />
+              {/* glow a la imagen sobrepuesta */}
+              <div className="absolute -inset-6 bg-purple-600/20 blur-3xl rounded-full z-21" />
             </div>
           </motion.div>
         </div>
