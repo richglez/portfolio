@@ -133,7 +133,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
               {/* Contenido */}
               <div className="relative flex flex-col h-full">
                 {/* Toolbar */}
-                <div className="flex items-center justify-end gap-3 p-3 border-b border-white/10 bg-black/20 backdrop-blur-md">
+                {/* <div className="flex items-center justify-end gap-3 p-3 border-b border-white/10 bg-black/20 backdrop-blur-md">
                   <a
                     href={CV_PATH}
                     download
@@ -141,7 +141,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
                   >
                     Download
                   </a>
-                </div>
+                </div> */}
 
                 {/* PDF preview */}
                 <iframe
