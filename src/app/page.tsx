@@ -5,6 +5,7 @@ import SkillsSection from "../components/Skills";
 import ProjectsSection from "../components/Projects";
 import Image from "next/image";
 
+
 function HomePage() {
   return (
     <>
