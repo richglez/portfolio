@@ -2,7 +2,6 @@
 
 import { useState, forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import TypingText from "@/components/TypingText";
 
 const AboutSection = forwardRef<HTMLElement>((props, ref) => {
@@ -167,24 +166,63 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
       <AnimatePresence>
         {showPreview && (
           <motion.div
-            className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-6"
+            key="modal"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setShowPreview(false)}
+            transition={{ duration: 0.28 }}
+            onClick={() => setShowPreview(false)} // click outside
           >
             <motion.div
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
-              className="w-full max-w-5xl h-[90vh] bg-zinc-900 rounded-2xl overflow-hidden border border-white/10"
-              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={(e) => e.stopPropagation()} // evita cerrar al click interno
+              className="
+                relative w-full max-w-4xl h-[90vh]
+                bg-linear-to-br from-zinc-900 via-zinc-950 to-purple-950/60
+                border border-purple-500/30
+                rounded-2xl
+                shadow-2xl shadow-purple-900/40
+                overflow-hidden
+              "
             >
-              <iframe
-                src={CV_PATH}
-                title="CV Preview"
-                className="w-full h-full"
-              />
+              {/* Glow */}
+              <div className="absolute -top-32 -right-32 w-72 h-72 bg-purple-600/20 blur-[120px] pointer-events-none" />
+
+              {/* Grid */}
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#a855f7_1px,transparent_1px)] bg-size-[28px_28px]" />
+
+              {/* Header */}
+              <div className="relative flex items-center justify-between p-4 border-b border-white/10">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/70" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/70" />
+                </div>
+
+                <h3 className="text-sm font-mono text-zinc-400 tracking-widest uppercase">
+                  CV Preview
+                </h3>
+
+                <button
+                  onClick={() => setShowPreview(false)}
+                  className="px-6 bg-red-500 rounded-full text-zinc-400 hover:text-white transition active:scale-85"
+                >
+                  ✕
+                </button>
+              </div>
+              {/* Contenido */}
+              <div className="relative flex-1 p-6 overflow-auto">
+                <iframe
+                  src={CV_PATH}
+                  title="CV Preview"
+                  className="w-full h-full"
+                />
+                {/* PDF */}
+              </div>
             </motion.div>
           </motion.div>
         )}

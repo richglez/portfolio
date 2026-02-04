@@ -8,20 +8,18 @@ import { motion, type Variants } from "framer-motion";
 import StaggerContainer from "@/components/StaggerContainer";
 import WordReveal from "@/components/WordReveal";
 
-
 function HomePage() {
-const fadeItem: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
+  const fadeItem: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
     },
-  },
-};
-
+  };
 
   return (
     <>
@@ -125,7 +123,8 @@ const fadeItem: Variants = {
               </a>
             </motion.div>
             <div className="socials-icons pt-6 flex gap-4.5">
-              <motion.a variants={fadeItem}
+              <motion.a
+                variants={fadeItem}
                 href="https://www.linkedin.com/in/ricardo-gonzalez-59736b2b7/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -141,7 +140,8 @@ const fadeItem: Variants = {
                   <path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z" />
                 </svg>
               </motion.a>
-              <motion.a variants={fadeItem}
+              <motion.a
+                variants={fadeItem}
                 href="https://github.com/richglez"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -159,7 +159,8 @@ const fadeItem: Variants = {
                   <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                 </svg>
               </motion.a>
-              <motion.a variants={fadeItem}
+              <motion.a
+                variants={fadeItem}
                 href="https://wa.me/525512017729?text=¡Hola%20Ricardo!%20Vi%20tu%20portfolio%20y%20me%20interesó%20tu%20trabajo%20como%20desarrollador."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -180,7 +181,7 @@ const fadeItem: Variants = {
 
           {/* RIGHT IMAGE */}
           <div className="rightSide relative w-full h-125">
-            <div  className="relative flex justify-center lg:justify-end items-center">
+            <div className="relative flex justify-center lg:justify-end items-center">
               <div className="relative w-full max-w-lg aspect-square">
                 <div className="absolute inset-0 glass rounded-3xl overflow-hidden border-white/5 shadow-2xl animate-float">
                   <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-transparent to-blue-500/20"></div>
