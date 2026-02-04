@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { forwardRef } from "react";
 import TypingText from "@/components/TypingText";
+import { motion, AnimatePresence } from "framer-motion";
 
 const AboutSection = forwardRef<HTMLElement>((props, ref) => {
   const [showPreview, setShowPreview] = useState(false);
+
   return (
     <section
       id="about"
@@ -64,53 +66,67 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
         </svg>
       </button>
-      {/* Modal de Vista Previa */}
-      {showPreview && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-          <div
-            className="
-      relative w-full max-w-4xl h-[90vh]
-      bg-linear-to-br from-zinc-900 via-zinc-950 to-purple-950/60
-      border border-purple-500/30
-      rounded-2xl
-      shadow-2xl shadow-purple-900/40
-      overflow-hidden
-      animate-in fade-in zoom-in-95 duration-300
-    "
+      {/* Modal de Vista Previa - ALWAYS ON TOP WINDOW */}
+      <AnimatePresence>
+        {showPreview && (
+          <motion.div
+            key="modal"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.28 }}
+            onClick={() => setShowPreview(false)} // click outside
           >
-            {/* Glow decorativo */}
-            <div className="absolute -top-32 -right-32 w-72 h-72 bg-purple-600/20 blur-[120px] pointer-events-none" />
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={(e) => e.stopPropagation()} // evita cerrar al click interno
+              className="
+                relative w-full max-w-4xl h-[90vh]
+                bg-linear-to-br from-zinc-900 via-zinc-950 to-purple-950/60
+                border border-purple-500/30
+                rounded-2xl
+                shadow-2xl shadow-purple-900/40
+                overflow-hidden
+              "
+            >
+              {/* Glow */}
+              <div className="absolute -top-32 -right-32 w-72 h-72 bg-purple-600/20 blur-[120px] pointer-events-none" />
 
-            {/* Grid tech pattern (sutil) */}
-            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#a855f7_1px,transparent_1px)] bg-size-[28px_28px]" />
+              {/* Grid */}
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#a855f7_1px,transparent_1px)] bg-size-[28px_28px]" />
 
-            {/* Header estilo ventana */}
-            <div className="relative flex items-center justify-between p-4 border-b border-white/10">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/70" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-                <div className="w-3 h-3 rounded-full bg-green-500/70" />
+              {/* Header */}
+              <div className="relative flex items-center justify-between p-4 border-b border-white/10">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/70" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/70" />
+                </div>
+
+                <h3 className="text-sm font-mono text-zinc-400 tracking-widest uppercase">
+                  CV Preview
+                </h3>
+
+                <button
+                  onClick={() => setShowPreview(false)}
+                  className="px-6 bg-red-500 rounded-full text-zinc-400 hover:text-white transition active:scale-85"
+                >
+                  ✕
+                </button>
               </div>
 
-              <h3 className="text-sm font-mono text-zinc-400 tracking-widest uppercase">
-                CV Preview
-              </h3>
-
-              <button
-                onClick={() => setShowPreview(false)}
-                className="text-zinc-400 hover:text-white transition"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Contenido */}
-            <div className="relative flex-1 p-6 overflow-auto">
-              {/* aquí pones tu PDF / preview */}
-            </div>
-          </div>
-        </div>
-      )}
+              {/* Contenido */}
+              <div className="relative flex-1 p-6 overflow-auto">
+                {/* PDF */}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <h3 className="text-3xl font-bold mt-20">Education</h3>
       <ul className="text-xl">
