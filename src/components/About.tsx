@@ -16,7 +16,12 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
 
       <p className="text-2xl text-zinc-300 max-w-4xl mb-6">
         Hi! I&apos;m Ricardo Gonzalez, a Computer Systems Engineering graduate
-        and software developer.
+        and software developer{" "}
+        <b>
+          specializing in building intuitive, modern, and scalable desktop,
+          mobile, and web applications with high visual impact
+        </b>
+        .
       </p>
 
       <p className="text-xl text-zinc-400 max-w-4xl mb-4">
@@ -62,26 +67,46 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
       {/* Modal de Vista Previa */}
       {showPreview && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-          <div className="relative w-full max-w-4xl h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col">
-            {/* Header del Modal */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-200">
-              <h3 className="text-xl font-semibold text-gray-800">
-                Vista Previa - Curriculum Vitae
+          <div
+            className="
+      relative w-full max-w-4xl h-[90vh]
+      bg-linear-to-br from-zinc-900 via-zinc-950 to-purple-950/60
+      border border-purple-500/30
+      rounded-2xl
+      shadow-2xl shadow-purple-900/40
+      overflow-hidden
+      animate-in fade-in zoom-in-95 duration-300
+    "
+          >
+            {/* Glow decorativo */}
+            <div className="absolute -top-32 -right-32 w-72 h-72 bg-purple-600/20 blur-[120px] pointer-events-none" />
+
+            {/* Grid tech pattern (sutil) */}
+            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#a855f7_1px,transparent_1px)] bg-size-[28px_28px]" />
+
+            {/* Header estilo ventana */}
+            <div className="relative flex items-center justify-between p-4 border-b border-white/10">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500/70" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                <div className="w-3 h-3 rounded-full bg-green-500/70" />
+              </div>
+
+              <h3 className="text-sm font-mono text-zinc-400 tracking-widest uppercase">
+                CV Preview
               </h3>
+
               <button
                 onClick={() => setShowPreview(false)}
-                className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
-                aria-label="Cerrar"
+                className="text-zinc-400 hover:text-white transition"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-6 h-6 text-gray-600"
-                >
-                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-                </svg>
+                ✕
               </button>
+            </div>
+
+            {/* Contenido */}
+            <div className="relative flex-1 p-6 overflow-auto">
+              {/* aquí pones tu PDF / preview */}
             </div>
           </div>
         </div>
