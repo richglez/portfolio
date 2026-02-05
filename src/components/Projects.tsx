@@ -95,7 +95,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="min-h-screen scroll-mt-24 pt-20 text-white px-75 "
+      className="min-h-screen scroll-mt-24 pt-20 mb-160 text-white px-75 "
     >
       <motion.h2
         className="text-6xl font-bold mb-4"
