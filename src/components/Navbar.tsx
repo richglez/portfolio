@@ -77,9 +77,9 @@ export default function Navbar() {
         </ul>
 
         {/* RIGHT — Button */}
-        <button className="justify-self-end glow-button bg-purple-600 hover:bg-purple-500 text-white px-6 py-2 rounded-xl font-semibold transition-all cursor-pointer shadow-lg hover:shadow-purple-500/50 active:scale-95">
+        <a href="#letstalk" className="justify-self-end glow-button bg-purple-600 hover:bg-purple-500 text-white px-6 py-2 rounded-xl font-semibold transition-all cursor-pointer shadow-lg hover:shadow-purple-500/50 active:scale-95">
           Let&apos;s Talk
-        </button>
+        </a>
       </motion.nav>
     </header>
   );

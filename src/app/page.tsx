@@ -7,6 +7,7 @@ import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import StaggerContainer from "@/components/StaggerContainer";
 import WordReveal from "@/components/WordReveal";
+import LetsTalk from "@/components/LetsTalk";
 
 function HomePage() {
   const fadeItem: Variants = {
@@ -246,6 +247,8 @@ function HomePage() {
       <SkillsSection />
 
       <ProjectsSection />
+
+      <LetsTalk />
     </>
   );
 }
