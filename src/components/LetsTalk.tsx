@@ -17,7 +17,7 @@ function LetsTalk() {
       id="letstalk"
       className="min-h-screen scroll-mt-24 py-5 px-75 text-white"
     >
-      <div className="">
+        {/* container type grid col 2 */}
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* LEFT COLUMN */}
           <div>
@@ -27,7 +27,7 @@ function LetsTalk() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
-              className="text-5xl lg:text-6xl font-bold tracking-tight"
+              className="text-[54px] font-bold tracking-tight mt-15"
             >
               {" "}
               Let&apos;s Talk{" "}
@@ -38,15 +38,15 @@ function LetsTalk() {
             </motion.h2>
 
             {/* Subtitle */}
-            <motion.p
+            <motion.div
               variants={fadeZoom}
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.5 }}
-              className="mt-6 text-white/70 text-lg max-w-xl"
+              className="mt-6 text-white/70 text-lg"
             >
               <AnimatedWords text="Interested in collaborating or have a project in mind? Feel free to reach out!" />
-            </motion.p>
+            </motion.div>
 
             {/* Glass Form */}
             <motion.div
@@ -55,7 +55,7 @@ function LetsTalk() {
               whileInView="visible"
               viewport={{ amount: 0.4 }}
               className="
-                mt-14 max-w-xl
+                mt-12 w-150 max-h-120
                 rounded-2xl
                 bg-white/5 backdrop-blur-xl
                 border border-white/10
@@ -87,7 +87,7 @@ function LetsTalk() {
                 </div>
 
                 {/* Message */}
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 max-h-30">
                   <label className="text-sm text-white/70">Message</label>
                   <textarea
                     rows={4}
@@ -109,20 +109,20 @@ function LetsTalk() {
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="relative ">
+          <div className="relative flex justify-end mt-16">
             <motion.img
               variants={fadeZoom}
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3 }}
               src="/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"
-              className="aspect-square w-140 h-130 relative z-10 rounded-3xl object-cover shadow-2xl border border-white/10"
+              className="aspect-square w-130 h-130 relative z-10 rounded-3xl object-cover shadow-2xl border border-white/10"
             />
             {/* glow a la imagen sobrepuesta */}
             <div className="absolute -inset-6 bg-purple-600/20 blur-3xl rounded-full z-21" />
           </div>
         </div>
-      </div>
+
     </section>
   );
 }

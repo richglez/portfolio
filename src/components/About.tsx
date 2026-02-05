@@ -17,85 +17,104 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     }),
   };
 
+    const scaleIn = {
+      hidden: { opacity: 0, scale: 0.9 },
+      show: {
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.6, ease: "easeOut" },
+      },
+    };
+
   return (
     <section
       id="about"
       ref={ref}
       className="min-h-screen scroll-mt-24 pt-20 mb-130 text-white px-75"
     >
-      {/* container centrado */}
-      <div className="max-w-7xl mx-auto">
-        {/* Contenido about */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* ================= LEFT ================= */}
-          <div className="space-y-8">
-            <motion.h2
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              custom={0}
-              viewport={{ once: true }}
-              className="text-5xl lg:text-6xl font-bold tracking-tight"
-            >
-              About
-            </motion.h2>
+      {/* MAIN CONTAINER */}
+      <div className="grid lg:grid-cols-2 gap-20 items-center">
+        {/* ================= LEFT ================= */}
+        <div className="space-y-8">
+          {/* Title con gradiente */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            custom={0}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-5xl lg:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
+              About Me
+            </h2>
+            <div className="h-1 w-24 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mt-4" />
+          </motion.div>
 
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              custom={1}
-              className="text-[22px] text-zinc-300 leading-relaxed"
-            >
+          {/* Intro mejorado */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            custom={1}
+            className="space-y-4"
+          >
+            <p className="text-[22px] text-zinc-300 leading-relaxed">
               Hi! I&apos;m{" "}
-              <span className="text-white font-semibold">Ricardo Gonzalez</span>
-              , a software developer focused on building{" "}
-              <span className="text-purple-400">
+              <span className="text-white font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Ricardo Gonzalez
+              </span>
+              , a software developer passionate about building{" "}
+              <span className="text-purple-400 font-medium">
                 modern, intuitive and scalable applications
               </span>{" "}
-              across desktop, mobile and web.
-            </motion.p>
+              across desktop, mobile and web platforms.
+            </p>
 
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              custom={2}
-              className="text-zinc-400 text-[20px] leading-relaxed"
-            >
+            <p className="text-zinc-400 text-[20px] leading-relaxed">
               I enjoy solving complex problems through clean architecture,
-              readable code and thoughtful user experiences.
-            </motion.p>
+              readable code and thoughtful user experiences that make a real
+              difference.
+            </p>
+          </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              custom={3}
-              className="text-purple-400 text-[18px] font-medium min-h-20"
-            >
+          {/* Typing text con diseño mejorado */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            custom={2}
+            className="relative p-3 max-h-20 rounded-2xl bg-linear-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 backdrop-blur-sm"
+          >
+            <div className="absolute -inset-0.5 bg-linear-to-r from-purple-500 to-pink-500 rounded-2xl blur opacity-20" />
+            <div className="relative text-purple-300 text-[18px] font-medium min-h-20">
               <TypingText text="Currently building personal projects and exploring new technologies to grow as a full-stack developer." />
-            </motion.div>
+            </div>
+          </motion.div>
 
-            {/* BUTTON */}
+          {/* Buttons mejorados */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            custom={3}
+            className="flex flex-wrap gap-4"
+          >
             <motion.button
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              custom={4}
               onClick={() => setShowPreview(true)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="
                 px-8 py-3.5 rounded-2xl
-                bg-linear-to-r from-purple-600 to-purple-800
-                hover:scale-105 hover:shadow-xl
-                shadow-purple-900/40 shadow-lg
+                bg-linear-to-r from-purple-600 to-pink-600
+                hover:from-purple-500 hover:to-pink-500
+                shadow-lg shadow-purple-500/50
                 transition-all duration-300
-                font-semibold cursor-pointer
-                flex items-center justify-center gap-3
-                group
+                font-semibold
+                flex items-center gap-3
+                group cursor-pointer
               "
             >
-              <span>CV Preview</span>
+              <span>View CV</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -106,61 +125,104 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
               </svg>
             </motion.button>
 
-            {/* EDUCATION */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              custom={5}
-              className="pt-12"
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="
+                px-8 py-3.5 rounded-2xl
+                bg-white/10 backdrop-blur-sm
+                border border-white/20
+                hover:bg-white/20 hover:border-purple-500/50
+                transition-all duration-300
+                font-semibold
+                flex items-center gap-3
+              "
             >
-              <h3 className="text-2xl font-semibold mb-3">Education</h3>
+              <span>Get in Touch</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </motion.a>
+          </motion.div>
 
-              <div className="border-l border-white/10 pl-5 space-y-1 text-zinc-400">
-                <p className="text-[20px]">2020 – 2025</p>
-                <p className="text-[18px]">Universidad del Valle de México</p>
-                <p className="text-purple-400 text-[18px]">
-                  Computer Systems Engineering
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* ================= RIGHT IMAGE ================= */}
+          {/* EDUCATION mejorado */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="lg:sticky lg:top-28 flex justify-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            custom={4}
+            className="pt-8"
           >
-            <div className="relative aspect-square w-full max-w-md">
-              {/* glow background shadow purple */}
-              <div className="absolute -inset-6 bg-purple-600/30 blur-3xl rounded-full z-0" />
+            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
+              <span className="w-2 h-2 bg-purple-500 rounded-full" />
+              Education
+            </h3>
 
-              {/* blur image background */}
-              <motion.img
-                variants={fadeUp}
-                src="/HAU1KitXoAApgsa.jpg"
-                alt="About me image"
-                className="absolute bg-purple-600/20 blur-3xl w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10"
-                whileInView="show"
-                custom={5}
-              />
-              <motion.img
-                variants={fadeUp}
-                src="/HAU1KitXoAApgsa.jpg"
-                alt="About me image"
-                className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10 z-20"
-                initial="hidden"
-                whileInView="show"
-                custom={5}
-              />
-              {/* glow a la imagen sobrepuesta */}
-              <div className="absolute -inset-6 bg-purple-600/20 blur-3xl rounded-full z-21" />
+            <div className="relative pl-8 space-y-2">
+              {/* Línea vertical */}
+              <div className="absolute left-0 top-0 bottom-0 w-px bg-linear-to-b from-purple-500 via-pink-500 to-transparent" />
+
+              {/* Punto decorativo */}
+              <div className="absolute left-0 top-2 w-2 h-2 bg-purple-500 rounded-full -translate-x-[3.5px]" />
+
+              <p className="text-[20px] text-zinc-400 font-mono">2020 – 2025</p>
+              <p className="text-[18px] text-zinc-300 font-medium">
+                Universidad del Valle de México
+              </p>
+              <p className="text-purple-400 text-[18px] font-semibold">
+                Computer Systems Engineering
+              </p>
             </div>
           </motion.div>
         </div>
+
+        {/* ================= RIGHT CONTAINER ================= */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="lg:sticky lg:top-28 flex justify-center "
+        >
+          {/* IMAGE CONTAINER */}
+          <div className="relative aspect-square w-120 h-130">
+            {/* glow background shadow purple */}
+            <div className="absolute -inset-6 bg-purple-600/30 blur-3xl rounded-full z-0" />
+
+            {/* blur image background */}
+            <motion.img
+              variants={fadeUp}
+              src="/HAU1KitXoAApgsa.jpg"
+              alt="About me image"
+              className="absolute bg-purple-600/20 blur-3xl w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10"
+              whileInView="show"
+              custom={5}
+            />
+            <motion.img
+              variants={fadeUp}
+              src="/HAU1KitXoAApgsa.jpg"
+              alt="About me image"
+              className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10 z-20"
+              initial="hidden"
+              whileInView="show"
+              custom={5}
+            />
+            {/* glow a la imagen sobrepuesta */}
+            <div className="absolute -inset-6 bg-purple-600/20 blur-3xl rounded-full z-21" />
+          </div>
+        </motion.div>
       </div>
 
       {/* ================= MODAL ================= */}

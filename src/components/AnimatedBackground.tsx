@@ -17,7 +17,7 @@ export default function AnimatedBackground() {
     ],
   );
 
-  
+
 
 
   return (
@@ -27,3 +27,34 @@ export default function AnimatedBackground() {
     </motion.div>
   );
 }
+
+
+
+              // animate={{
+              //   rotate: 360,
+              // }}
+              // transition={{
+              //   duration: 20,
+              //   repeat: Infinity,
+              //   ease: "linear",
+              // }}
+              // className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 rounded-3xl opacity-20 blur-sm"
+
+
+
+
+
+              /* Glow animado */
+
+            // <motion.div
+            //   animate={{
+            //     scale: [1, 1.1, 1],
+            //     opacity: [0.3, 0.5, 0.3],
+            //   }}
+            //   transition={{
+            //     duration: 4,
+            //     repeat: Infinity,
+            //     ease: "easeInOut",
+            //   }}
+            //   className="absolute -inset-8 bg-gradient-to-r from-purple-600 to-pink-600 blur-3xl rounded-full opacity-30"
+            // />;
