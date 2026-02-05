@@ -180,7 +180,18 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
         </div>
 
         {/* ================= RIGHT CONTAINER ================= */}
-        <motion.div>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          custom={3}
+          whileHover={{
+            scale: 1.04,
+            rotate: 0.3,
+          }}
+          transition={{ duration: 0.4 }}
+          className=""
+        >
           <motion.img src={"/HAU1KitXoAApgsa.jpg"}></motion.img>
         </motion.div>
       </div>

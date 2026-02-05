@@ -109,11 +109,10 @@ function LetsTalk() {
         </div>
 
         {/* ================= RIGHT CONTAINER ================= */}
-        <motion.div>
-          <motion.img
-            src={"/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"}
-          ></motion.img>
-        </motion.div>
+
+        <motion.img
+          src={"/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"}
+        ></motion.img>
       </div>
     </section>
   );
