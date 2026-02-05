@@ -21,7 +21,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     <section
       id="about"
       ref={ref}
-      className="min-h-screen scroll-mt-24 pt-20 mb-120 text-white px-75"
+      className="min-h-screen scroll-mt-24 pt-20 mb-130 text-white px-75"
     >
       {/* container centrado */}
       <div className="max-w-7xl mx-auto">
@@ -71,7 +71,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
               initial="hidden"
               whileInView="show"
               custom={3}
-              className="text-purple-400 text-[18px] font-medium min-h-10"
+              className="text-purple-400 text-[18px] font-medium min-h-20"
             >
               <TypingText text="Currently building personal projects and exploring new technologies to grow as a full-stack developer." />
             </motion.div>
