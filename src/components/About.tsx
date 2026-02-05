@@ -209,9 +209,17 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
 
                 <button
                   onClick={() => setShowPreview(false)}
-                  className="px-6 bg-red-500 rounded-full text-zinc-400 hover:text-white transition active:scale-85"
+                  className="px-6 bg-red-500 rounded-full text-zinc-400 hover:text-white transition active:scale-85 cursor-pointer "
                 >
-                  ✕
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e3e3e3"
+                  >
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                  </svg>
                 </button>
               </div>
               {/* Contenido */}
