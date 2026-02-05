@@ -55,11 +55,8 @@ function HomePage() {
             <motion.h1
               variants={fadeItem}
               className="flex items-baseline text-6xl md:text-8xl font-black tracking-tight leading-tight mb-1 md:mb-2"
-            >
-              <WordReveal text="My" />
-              <span className="ml-5 md:ml-8 gradient-text">
-                <WordReveal text="Portfolio!." />
-              </span>
+            >My
+            <motion.span className="ml-5 md:ml-8 gradient-text">Portfolio!.</motion.span>
             </motion.h1>
 
             <motion.p

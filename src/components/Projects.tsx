@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { FiGithub, FiExternalLink, FiStar, FiGitBranch } from "react-icons/fi";
 import {motion, Variants} from "framer-motion"
+import AnimatedWords from "./AnimatedWords";
 
 interface GitHubRepo {
   id: number;
@@ -19,6 +20,27 @@ interface GitHubRepo {
 export default function ProjectsSection() {
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const fadeZoom: Variants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.95,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+
+
+
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -75,14 +97,27 @@ export default function ProjectsSection() {
       id="projects"
       className="min-h-screen scroll-mt-24 pt-20 text-white px-75 "
     >
-      <h2 className="text-6xl font-bold mb-4">Projects</h2>
-      <p className="text-zinc-400 text-xl mb-8">
-        Check out some of my recent work from GitHub
-      </p>
+      <motion.h2
+        className="text-6xl font-bold mb-4"
+        variants={fadeZoom}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        Projects
+      </motion.h2>
+
+      <AnimatedWords text="Check out some of my recent work from GitHub" />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {repos.map((repo) => (
-          <div
+        {repos.map((repo, i) => (
+          <motion.div
             key={repo.id}
+            variants={fadeZoom}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: i * 0.1 }}
             className="group relative bg-linear-to-br from-zinc-900 to-zinc-950 rounded-2xl p-6 border border-zinc-800 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1"
           >
             {/* Gradient overlay on hover */}
@@ -164,7 +199,7 @@ export default function ProjectsSection() {
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
