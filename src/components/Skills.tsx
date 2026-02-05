@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import TypingText from "./TypingText";
 
 const SkillsSection = () => {
@@ -524,12 +523,16 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="min-h-screen scroll-mt-24 pt-5 mb-120">
+    <section
+      id="skills"
+      className="min-h-screen scroll-mt-24 pt-20 mb-140"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          // CAMBIO: once: false para que repita al hacer scroll
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-6xl font-bold mb-4 text-white">Skills</h2>
@@ -542,7 +545,8 @@ const SkillsSection = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          // CAMBIO: once: false y ajustamos el margin para que se oculte apenas salga
+          viewport={{ once: false, amount: 0.2 }} //Significa que la animación comienza cuando el 20% del componente asoma en pantalla.
           className="grid grid-cols-1 lg:grid-cols-3 gap-8"
         >
           {skills.map((category, categoryIndex) => (
@@ -560,7 +564,7 @@ const SkillsSection = () => {
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: false, amount: 0.1 }} // CAMBIO
                 className="space-y-5"
               >
                 {category.items.map((skill, skillIndex) => (
@@ -588,7 +592,7 @@ const SkillsSection = () => {
                         className={`h-full bg-linear-to-r ${skill.color} rounded-full`}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.3 }}
                         transition={{
                           duration: 1.5,
                           delay: skillIndex * 0.1,
@@ -608,7 +612,7 @@ const SkillsSection = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, amount: 0.3 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12"
         >
           <motion.div

@@ -21,7 +21,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     <section
       id="about"
       ref={ref}
-      className="min-h-screen scroll-mt-24 pt-20 text-white px-75"
+      className="min-h-screen scroll-mt-24 pt-20 mb-120 text-white px-75"
     >
       {/* container centrado */}
       <div className="max-w-7xl mx-auto">

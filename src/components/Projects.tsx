@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { FiGithub, FiExternalLink, FiStar, FiGitBranch } from "react-icons/fi";
+import {motion, Variants} from "framer-motion"
 
 interface GitHubRepo {
   id: number;
@@ -15,7 +16,7 @@ interface GitHubRepo {
   updated_at: string;
 }
 
-function ProjectsSection() {
+export default function ProjectsSection() {
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -170,4 +171,4 @@ function ProjectsSection() {
   );
 }
 
-export default ProjectsSection;
+
