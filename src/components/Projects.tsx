@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { FiGithub, FiExternalLink, FiStar, FiGitBranch } from "react-icons/fi";
-import {motion, Variants} from "framer-motion"
+import { motion, Variants } from "framer-motion";
 import AnimatedWords from "./AnimatedWords";
 
 interface GitHubRepo {
@@ -37,10 +37,6 @@ export default function ProjectsSection() {
       },
     },
   };
-
-
-
-
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -205,5 +201,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-
-

@@ -42,9 +42,108 @@ function LetsTalk() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.7 }}
+        className="mt-7"
       >
         <AnimatedWords text="Interested in collaborating or have a project in mind? Feel free to reach out!" />
       </motion.p>
+
+      {/* Glass Card */}
+      <motion.div
+        variants={fadeZoom}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.4 }}
+        className="group hover:shadow-[0_0_60px_rgba(168,85,247,0.25)]
+          mt-16 max-w-xl
+          rounded-2xl
+          bg-white/5 backdrop-blur-xl
+          border border-white/10 hover:border-purple-500/50 transition-all duration-300
+          shadow-[0_0_40px_rgba(168,85,247,0.15)]
+          p-8
+        "
+      >
+        <form className="space-y-6">
+          {/* Name */}
+          <div className="flex flex-col gap-2">
+            <label className="text-sm text-white/70 group-hover:text-purple-400 transition-colors">
+              Name
+            </label>
+            <input
+              type="text"
+              placeholder="Your name"
+              className="
+                rounded-xl bg-black/30
+                border border-white/10
+                px-4 py-3
+                text-white placeholder:text-white/40
+                outline-none
+                focus:border-[var(--color-primary)]
+                focus:ring-1 focus:ring-[var(--color-primary)]
+                transition
+              "
+            />
+          </div>
+
+          {/* Email */}
+          <div className="flex flex-col gap-2">
+            <label className="text-sm text-white/70 group-hover:text-purple-400 transition-colors">
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="you@email.com"
+              className="
+                rounded-xl bg-black/30
+                border border-white/10
+                px-4 py-3
+                text-white placeholder:text-white/40
+                outline-none
+                focus:border-[var(--color-primary)]
+                focus:ring-1 focus:ring-[var(--color-primary)]
+                transition
+              "
+            />
+          </div>
+
+          {/* Message */}
+          <div className="flex flex-col gap-2">
+            <label className="text-sm text-white/70 group-hover:text-purple-400 transition-colors">
+              Message
+            </label>
+            <textarea
+              rows={4}
+              placeholder="Tell me about your project..."
+              className="
+                rounded-xl bg-black/30
+                border border-white/10
+                px-4 py-3
+                text-white placeholder:text-white/40
+                outline-none resize-none
+                focus:border-[var(--color-primary)]
+                focus:ring-1 focus:ring-[var(--color-primary)]
+                transition
+              "
+            />
+          </div>
+
+          {/* Button */}
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="
+              mt-4 w-full
+              rounded-xl
+              bg-[var(--color-primary)]
+              py-3 font-semibold
+              text-slate-800
+              shadow-[0_0_30px_var(--color-primary)]
+              transition cursor-pointer group-hover:text-white
+            "
+          >
+            Send Message
+          </motion.button>
+        </form>
+      </motion.div>
     </section>
   );
 }
