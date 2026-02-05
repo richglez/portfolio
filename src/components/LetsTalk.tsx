@@ -112,6 +112,16 @@ function LetsTalk() {
 
         <motion.img
           src={"/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"}
+          initial="hidden"
+          whileInView={"visible"}
+          custom={3}
+          variants={fadeZoom}
+          viewport={{ once: false, amount: 0.3 }}
+          whileHover={{
+            scale: 1.04,
+            rotate: 0.3,
+          }}
+          transition={{ duration: 0.4 }}
         ></motion.img>
       </div>
     </section>
