@@ -186,7 +186,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
                 border border-purple-500/30
                 rounded-2xl
                 shadow-2xl shadow-purple-900/40
-                overflow-hidden
+                overflow-hidden flex flex-col
               "
             >
               {/* Glow */}
