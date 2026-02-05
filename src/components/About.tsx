@@ -25,6 +25,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     >
       {/* container centrado */}
       <div className="max-w-7xl mx-auto">
+        {/* Contenido about */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* ================= LEFT ================= */}
           <div className="space-y-8">
