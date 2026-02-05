@@ -17,15 +17,6 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     }),
   };
 
-    const scaleIn = {
-      hidden: { opacity: 0, scale: 0.9 },
-      show: {
-        opacity: 1,
-        scale: 1,
-        transition: { duration: 0.6, ease: "easeOut" },
-      },
-    };
-
   return (
     <section
       id="about"
@@ -60,7 +51,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           >
             <p className="text-[22px] text-zinc-300 leading-relaxed">
               Hi! I&apos;m{" "}
-              <span className="text-white font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="text-white font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text">
                 Ricardo Gonzalez
               </span>
               , a software developer passionate about building{" "}
@@ -189,39 +180,8 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
         </div>
 
         {/* ================= RIGHT CONTAINER ================= */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="lg:sticky lg:top-28 flex justify-center "
-        >
-          {/* IMAGE CONTAINER */}
-          <div className="relative aspect-square w-120 h-130">
-            {/* glow background shadow purple */}
-            <div className="absolute -inset-6 bg-purple-600/30 blur-3xl rounded-full z-0" />
-
-            {/* blur image background */}
-            <motion.img
-              variants={fadeUp}
-              src="/HAU1KitXoAApgsa.jpg"
-              alt="About me image"
-              className="absolute bg-purple-600/20 blur-3xl w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10"
-              whileInView="show"
-              custom={5}
-            />
-            <motion.img
-              variants={fadeUp}
-              src="/HAU1KitXoAApgsa.jpg"
-              alt="About me image"
-              className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10 z-20"
-              initial="hidden"
-              whileInView="show"
-              custom={5}
-            />
-            {/* glow a la imagen sobrepuesta */}
-            <div className="absolute -inset-6 bg-purple-600/20 blur-3xl rounded-full z-21" />
-          </div>
+        <motion.div>
+          <motion.img src={"/HAU1KitXoAApgsa.jpg"}></motion.img>
         </motion.div>
       </div>
 
