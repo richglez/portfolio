@@ -19,7 +19,7 @@ function LetsTalk() {
     >
       {/* container type grid col 2 */}
       <div className="grid lg:grid-cols-2 gap-20 items-center">
-        {/* LEFT COLUMN */}
+        {/* ================= LEFT COLUMN ================= */}
         <div>
           {/* Title */}
           <motion.h2
@@ -68,10 +68,7 @@ function LetsTalk() {
             <form className="space-y-6">
               {/* Name */}
               <div className="flex flex-col gap-2">
-                <label
-                  className="text-sm text-white/70 group-hover:text-purple-400 group-hover:tracking-wide     transition-all
-    duration-300"
-                >
+                <label className="text-sm text-white/70 group-hover:text-purple-400 group-hover:tracking-wide transition-all duration-300">
                   Name
                 </label>
                 <input
@@ -84,10 +81,7 @@ function LetsTalk() {
 
               {/* Email */}
               <div className="flex flex-col gap-2">
-                <label
-                  className="text-sm text-white/70 group-hover:text-purple-400 group-hover:tracking-wide     transition-all
-    duration-300"
-                >
+                <label className="text-sm text-white/70 group-hover:text-purple-400 group-hover:tracking-wide transition-all duration-300">
                   Email
                 </label>
                 <input
@@ -121,7 +115,7 @@ function LetsTalk() {
           </motion.div>
         </div>
 
-        {/* ================= RIGHT CONTAINER ================= */}
+        {/* ================= RIGHT COLUMN ================= */}
         {/* TOP IMAGE */}
         <motion.div
           whileHover={{
