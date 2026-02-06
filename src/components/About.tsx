@@ -186,13 +186,16 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             rotate: 0.3,
           }}
           transition={{ duration: 0.4 }}
-          className="relative aspect-square w-140 h-140 mx-10 mt-20"
+          className="relative aspect-square w-140 h-140 mx-10"
         >
           <motion.img
             variants={fadeUp}
+            custom={3}
             initial="hidden"
             whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
             src={"/HAU1KitXoAApgsa.jpg"}
+            className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10 z-20"
           ></motion.img>
         </motion.div>
       </div>
