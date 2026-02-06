@@ -6,7 +6,7 @@ import BlurBlob from "./BlurBlob";
 export default function AnimatedBackground() {
   const { scrollYProgress } = useScroll();
 
-  // colores dinámicos
+  // colores dinámicos al scrollear
   const bg = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
@@ -22,8 +22,9 @@ export default function AnimatedBackground() {
 
   return (
     <motion.div className="fixed inset-0 -z-10" style={{ backgroundImage: bg }}>
+      {/* Bolita en movimiento en el fondo */}
       <BlurBlob />
-      <BlurBlob delay={2} />
+      <BlurBlob delay={2} blue-500 />
     </motion.div>
   );
 }

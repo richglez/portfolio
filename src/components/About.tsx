@@ -93,7 +93,6 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             <motion.button
               onClick={() => setShowPreview(true)}
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               className="
                 px-8 py-3.5 rounded-2xl
                 bg-linear-to-r from-purple-600 to-pink-600
@@ -102,7 +101,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
                 transition-all duration-300
                 font-semibold
                 flex items-center gap-3
-                group cursor-pointer
+                group cursor-pointer active:scale-85
               "
             >
               <span>View CV</span>
@@ -117,9 +116,10 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             </motion.button>
 
             <motion.a
-              href="#contact"
+              href="https://wa.me/525512017729?text=¡Hola%20Ricardo!%20Vi%20tu%20portfolio%20y%20me%20interesó%20tu%20trabajo%20como%20desarrollador."
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               className="
                 px-8 py-3.5 rounded-2xl
                 bg-white/10 backdrop-blur-sm
@@ -127,7 +127,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
                 hover:bg-white/20 hover:border-purple-500/50
                 transition-all duration-300
                 font-semibold
-                flex items-center gap-3
+                flex items-center gap-3 active:scale-85
               "
             >
               <span>Get in Touch</span>
