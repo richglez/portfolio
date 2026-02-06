@@ -188,6 +188,13 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           transition={{ duration: 0.4 }}
           className="relative aspect-square w-140 h-140 mx-10"
         >
+          {/* BLUR IMAGE BACKGROUND */}
+          <motion.img
+            src="/HAU1KitXoAApgsa.jpg"
+            alt="Glow background"
+            className="absolute inset-0 w-full h-full object-cover rounded-3xl blur-3xl opacity-70 z-10"
+          />
+          {/* TOP IMAGE */}
           <motion.img
             variants={fadeUp}
             custom={3}
@@ -197,6 +204,8 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             src={"/HAU1KitXoAApgsa.jpg"}
             className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10 z-20"
           ></motion.img>
+          {/* glow a la imagen sobrepuesta mas saturacion a la imgen*/}
+          <div className="absolute -inset-6 bg-purple-600/20 blur-3xl rounded-full z-30" />
         </motion.div>
       </div>
 

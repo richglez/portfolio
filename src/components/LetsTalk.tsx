@@ -127,10 +127,11 @@ function LetsTalk() {
         >
           {/* BLUR IMAGE BACKGROUND */}
           <motion.img
-            src="/HAU1KitXoAApgsa.jpg"
+            src="/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"
             alt="Glow background"
             className="absolute inset-0 w-full h-full object-cover rounded-3xl blur-2xl opacity-70 z-10"
           />
+          {/* TOP IMAGE */}
           <motion.img
             src={"/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"}
             initial="hidden"
