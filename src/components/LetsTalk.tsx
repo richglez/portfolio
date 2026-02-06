@@ -60,7 +60,7 @@ function LetsTalk() {
                 bg-white/5 backdrop-blur-xl
                 border border-white/10
                 p-8
-                shadow-[0_0_40px_rgba(168,85,247,0.15)]
+                shadow-[0_0_40px_rgba(168,85,247,0.15)] group
                 hover:border-purple-500/50
                 transition
               "
@@ -68,17 +68,28 @@ function LetsTalk() {
             <form className="space-y-6">
               {/* Name */}
               <div className="flex flex-col gap-2">
-                <label className="text-sm text-white/70">Name</label>
+                <label
+                  className="text-sm text-white/70 group-hover:text-purple-400 group-hover:tracking-wide     transition-all
+    duration-300"
+                >
+                  Name
+                </label>
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition"
+                  className="rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500
+"
                 />
               </div>
 
               {/* Email */}
               <div className="flex flex-col gap-2">
-                <label className="text-sm text-white/70">Email</label>
+                <label
+                  className="text-sm text-white/70 group-hover:text-purple-400 group-hover:tracking-wide     transition-all
+    duration-300"
+                >
+                  Email
+                </label>
                 <input
                   type="email"
                   placeholder="you@email.com"
@@ -87,8 +98,10 @@ function LetsTalk() {
               </div>
 
               {/* Message */}
-              <div className="flex flex-col gap-2 max-h-30">
-                <label className="text-sm text-white/70">Message</label>
+              <div className="flex flex-col gap-2 max-h-30 ">
+                <label className="text-sm text-white/70 group-hover:text-purple-400 group-hover:tracking-wide transition-all duration-300">
+                  Message
+                </label>
                 <textarea
                   rows={4}
                   placeholder="Tell me about your project..."
@@ -100,7 +113,7 @@ function LetsTalk() {
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full rounded-xl bg-purple-500 py-3 font-semibold text-black shadow-[0_0_30px_rgba(168,85,247,0.8)] cursor-pointer"
+                className="w-full rounded-xl bg-purple-500 py-3 font-semibold text-black shadow-[0_0_30px_rgba(168,85,247,0.8)] cursor-pointer hover:text-slate-200 group-hover:tracking-wide transition-all duration-300"
               >
                 Send Message
               </motion.button>
@@ -109,20 +122,33 @@ function LetsTalk() {
         </div>
 
         {/* ================= RIGHT CONTAINER ================= */}
-
-        <motion.img
-          src={"/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"}
-          initial="hidden"
-          whileInView={"visible"}
-          custom={3}
-          variants={fadeZoom}
-          viewport={{ once: false, amount: 0.3 }}
+        {/* TOP IMAGE */}
+        <motion.div
           whileHover={{
             scale: 1.04,
             rotate: 0.3,
           }}
           transition={{ duration: 0.4 }}
-        ></motion.img>
+          className="relative aspect-square w-140 h-140 mx-10 mt-20"
+        >
+          {/* BLUR IMAGE BACKGROUND */}
+          <motion.img
+            src="/HAU1KitXoAApgsa.jpg"
+            alt="Glow background"
+            className="absolute inset-0 w-full h-full object-cover rounded-3xl blur-2xl opacity-70 z-10"
+          />
+          <motion.img
+            src={"/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"}
+            initial="hidden"
+            whileInView={"visible"}
+            custom={3}
+            variants={fadeZoom}
+            viewport={{ once: false, amount: 0.3 }}
+            className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10 z-20"
+          ></motion.img>
+          {/* glow a la imagen sobrepuesta mas saturacion a la imgen*/}
+          <div className="absolute -inset-6 bg-purple-600/20 blur-3xl rounded-full z-30" />
+        </motion.div>
       </div>
     </section>
   );
