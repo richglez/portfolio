@@ -20,7 +20,12 @@ function LetsTalk() {
       {/* container type grid col 2 */}
       <div className="grid lg:grid-cols-2 gap-20 items-center">
         {/* ================= LEFT COLUMN ================= */}
-        <div>
+        <motion.div
+          variants={fadeZoom}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.5 }}
+        >
           {/* Title */}
           <motion.h2
             variants={fadeZoom}
@@ -36,6 +41,7 @@ function LetsTalk() {
               Contact to Me{" "}
             </motion.span>{" "}
           </motion.h2>
+          <div className="h-1 w-24 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mt-1" />
 
           {/* Subtitle */}
           <motion.div
@@ -43,7 +49,7 @@ function LetsTalk() {
             initial="hidden"
             whileInView="visible"
             viewport={{ amount: 0.5 }}
-            className="mt-6 text-white/70 text-lg"
+            className="mt-8 text-white/70 text-lg"
           >
             <AnimatedWords text="Interested in collaborating or have a project in mind? Feel free to reach out!" />
           </motion.div>
@@ -113,7 +119,7 @@ function LetsTalk() {
               </motion.button>
             </form>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* ================= RIGHT COLUMN ================= */}
         {/* TOP IMAGE */}
@@ -136,7 +142,6 @@ function LetsTalk() {
             src={"/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"}
             initial="hidden"
             whileInView={"visible"}
-            custom={3}
             variants={fadeZoom}
             viewport={{ once: false, amount: 0.3 }}
             className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10 z-20"

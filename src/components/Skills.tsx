@@ -523,19 +523,23 @@ const SkillsSection = () => {
   };
 
   return (
-    <section
-      id="skills"
-      className="min-h-screen scroll-mt-24 pt-20 mb-160"
-    >
+    <section id="skills" className="min-h-screen scroll-mt-24 pt-20 mb-160">
       <div className="max-w-7xl mx-auto">
+        {/* Container Title con gradiente */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          // CAMBIO: once: false para que repita al hacer scroll
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-6xl font-bold mb-4 text-white">Skills</h2>
+          <motion.h2 className="text-6xl font-bold mb-4 text-white">
+            Skills
+          </motion.h2>
+          <div className="h-1 w-24 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mt-4" />
+        </motion.div>
+
+        {/* Contenido */}
+        <motion.div className="mt-8">
           <p className="text-xl text-zinc-400 mb-12 max-w-2xl">
             <TypingText text="Technologies and tools that I know and still learing.!" />
           </p>

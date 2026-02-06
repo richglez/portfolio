@@ -93,17 +93,29 @@ export default function ProjectsSection() {
       id="projects"
       className="min-h-screen scroll-mt-24 pt-20 mb-160 text-white px-75 "
     >
-      <motion.h2
-        className="text-6xl font-bold mb-4"
+      {/* Container Title con gradiente */}
+      <motion.div
         variants={fadeZoom}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
       >
-        Projects
-      </motion.h2>
+        <motion.h2
+          className="text-6xl font-bold mb-4"
+          variants={fadeZoom}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          Projects
+        </motion.h2>
+        <div className="h-1 w-24 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mt-6" />
+      </motion.div>
 
-      <AnimatedWords text="Check out some of my recent work from GitHub" />
+      {/* Contenido */}
+      <motion.div className="mt-8">
+        <AnimatedWords text="Check out some of my recent work from GitHub" />
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         {repos.map((repo, i) => (

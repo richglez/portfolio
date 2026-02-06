@@ -13,7 +13,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     show: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.12, duration: 0.5 },
+      transition: { delay: i * 0.12, duration: 0.7 },
     }),
   };
 
@@ -27,21 +27,26 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
       <div className="grid lg:grid-cols-2 gap-20 items-center">
         {/* ================= LEFT ================= */}
         <div className="space-y-8">
-          {/* Title con gradiente */}
+          {/* Container Title con gradiente */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            custom={0}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }}
           >
-            <h2 className="text-5xl lg:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
+            <motion.h2
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.3 }}
+              className="text-5xl lg:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent"
+            >
               About Me
-            </h2>
+            </motion.h2>
             <div className="h-1 w-24 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mt-4" />
           </motion.div>
 
-          {/* Intro mejorado */}
+          {/* Contenido */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
