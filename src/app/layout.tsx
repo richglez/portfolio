@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import AnimatedBackground from "@/components/AnimatedBackground";
+import ClientLayout from "./ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,18 +21,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#050505ff] bg-mesh`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#050505ff] bg-mesh relative`}
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-[#231A69]/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
-        <AnimatedBackground /> {/* vive siempre */}
-        <Navbar />
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
