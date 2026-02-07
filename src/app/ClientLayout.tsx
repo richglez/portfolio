@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
+import { motion } from "framer-motion";
 import AnimatedBackground from "@/components/AnimatedBackground";
 
 export default function ClientLayout({
@@ -12,7 +13,7 @@ export default function ClientLayout({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2700);
+    const timer = setTimeout(() => setLoading(false), 2700); //await timeout
     return () => clearTimeout(timer);
   }, []);
 
@@ -33,11 +34,11 @@ export default function ClientLayout({
       )}
 
       {!loading && (
-        <>
+        <motion.div key="app-content" initial="hidden" animate="show">
           <AnimatedBackground />
           <Navbar />
           {children}
-        </>
+        </motion.div>
       )}
     </>
   );

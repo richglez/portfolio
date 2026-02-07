@@ -13,9 +13,39 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     show: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.12, duration: 0.7 },
+      transition: { delay: i * 0.12, duration: 0.9, },
     }),
   };
+
+
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.15,
+      },
+    },
+  };
+
+  const item = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+      filter: "blur(6px)",
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1] as const, // easing premium
+      },
+    },
+  };
+
+
 
   return (
     <section
@@ -26,7 +56,13 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
       {/* MAIN CONTAINER */}
       <div className="grid lg:grid-cols-2 gap-20 items-center">
         {/* ================= LEFT ================= */}
-        <div className="space-y-8">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="space-y-8"
+        >
           {/* Container Title con gradiente */}
           <motion.div
             variants={fadeUp}
@@ -35,10 +71,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             viewport={{ once: false, amount: 0.3 }}
           >
             <motion.h2
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.3 }}
+              variants={item}
               className="text-5xl lg:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent"
             >
               About Me
@@ -54,7 +87,10 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             custom={1}
             className="space-y-4"
           >
-            <p className="text-[22px] text-zinc-300 leading-relaxed">
+            <motion.p
+              variants={item}
+              className="text-[22px] text-zinc-300 leading-relaxed"
+            >
               Hi! I&apos;m{" "}
               <span className="text-white font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text">
                 Ricardo Gonzalez
@@ -64,7 +100,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
                 modern, intuitive and scalable applications
               </span>{" "}
               across desktop, mobile and web platforms.
-            </p>
+            </motion.p>
 
             <p className="text-zinc-400 text-[20px] leading-relaxed">
               I enjoy solving complex problems through clean architecture,
@@ -75,10 +111,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
 
           {/* Typing text con diseño mejorado */}
           <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            custom={2}
+            variants={item}
             className="relative p-3 max-h-20 rounded-2xl bg-linear-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 backdrop-blur-sm"
           >
             <div className="absolute -inset-0.5 bg-linear-to-r from-purple-500 to-pink-500 rounded-2xl blur opacity-20" />
@@ -88,13 +121,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           </motion.div>
 
           {/* Buttons mejorados */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            custom={3}
-            className="flex flex-wrap gap-4"
-          >
+          <motion.div variants={item} className="flex flex-wrap gap-4">
             <motion.button
               onClick={() => setShowPreview(true)}
               whileHover={{ scale: 1.05 }}
@@ -182,15 +209,18 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
               </p>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* ================= RIGHT CONTAINER ================= */}
         <motion.div
-          whileHover={{
-            scale: 1.04,
-            rotate: 0.3,
+          initial={{ opacity: 0, scale: 0.96, y: 40 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{
+            duration: 0.9,
+            ease: [0.22, 1, 0.36, 1],
           }}
-          transition={{ duration: 0.4 }}
+          whileHover={{ scale: 1.03, rotate: 0.2 }}
           className="relative aspect-square w-140 h-140 mx-10"
         >
           {/* BLUR IMAGE BACKGROUND */}
@@ -223,14 +253,17 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.28 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
             onClick={() => setShowPreview(false)} // click outside
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.25 }}
+              initial={{ scale: 0.92, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.92, opacity: 0, y: 20 }}
+              transition={{
+                duration: 0.35,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               onClick={(e) => e.stopPropagation()} // evita cerrar al click interno
               className="
                 relative w-full max-w-4xl h-[90vh]

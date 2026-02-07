@@ -1,26 +1,30 @@
 "use client";
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
+
+interface StaggerContainerProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
+    },
+  },
+};
 
 export default function StaggerContainer({
   children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+  className,
+}: StaggerContainerProps) {
   return (
     <motion.div
-      initial="hidden"
-      animate="show"
-      variants={{
-        hidden: {},
-        show: {
-          transition: {
-            delayChildren: 0.4, // espera a que termine navbar
-            staggerChildren: 0.18,
-          },
-        },
-      }}
+      variants={containerVariants}
+      initial={false}
       className={className}
     >
       {children}
