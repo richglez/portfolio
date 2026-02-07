@@ -18,7 +18,6 @@ export default function ClientLayout({
 
   return (
     <>
-      {/* 🔥 LOADING OVERLAY */}
       {loading && (
         <div className="fixed inset-0 z-9999 flex items-center justify-center bg-[#050505ff]">
           <div className="flex flex-col items-center gap-4">
@@ -33,12 +32,13 @@ export default function ClientLayout({
         </div>
       )}
 
-      {/* 🌌 TU UI TAL CUAL */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-[#231A69]/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
-      <AnimatedBackground />
-      <Navbar />
-
-      {children}
+      {!loading && (
+        <>
+          <AnimatedBackground />
+          <Navbar />
+          {children}
+        </>
+      )}
     </>
   );
 }
