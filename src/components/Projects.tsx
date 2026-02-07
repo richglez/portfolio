@@ -3,6 +3,14 @@ import { useEffect, useState } from "react";
 import { FiGithub, FiExternalLink, FiStar, FiGitBranch } from "react-icons/fi";
 import { motion, Variants } from "framer-motion";
 import AnimatedWords from "./AnimatedWords";
+import Image from "next/image";
+
+const projectPreviews: Record<string, string> = {
+  "terapia-respiro-emocional-app": "/a0ed8048-125f-49c3-b217-f973d2c33eb3.png",
+  portfolio: "/gemini-portfolio-hero-ia-version-glass.png",
+  CajeroAutomatico: "/10873a6b-dbe6-475d-90c2-9b34815212d0.png",
+};
+
 
 interface GitHubRepo {
   id: number;
@@ -44,6 +52,7 @@ export default function ProjectsSection() {
         // Reemplaza 'richglez' con tu username de GitHub
         const response = await fetch(
           "https://api.github.com/users/richglez/repos?sort=updated&per_page=6",
+
         );
         const data = await response.json();
         setRepos(data);
@@ -128,6 +137,26 @@ export default function ProjectsSection() {
             transition={{ delay: i * 0.1 }}
             className="group relative bg-linear-to-br from-zinc-900 to-zinc-950 rounded-2xl p-6 border border-zinc-800 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1"
           >
+            {projectPreviews[repo.name] && (
+              <div className="relative mb-4 overflow-hidden rounded-xl border border-zinc-800">
+                <Image
+                  src={projectPreviews[repo.name]}
+                  alt={`${repo.name} preview`}
+                  height={1920}
+                  width={1080}
+                  className="w-full h-40 object-cover
+                 transition-transform duration-500
+                 group-hover:scale-105"
+                />
+
+                {/* overlay glass */}
+                <div
+                  className="absolute inset-0 bg-black/20 backdrop-blur-sm
+                    opacity-0 group-hover:opacity-100
+                    transition-opacity duration-300"
+                />
+              </div>
+            )}
             {/* Gradient overlay on hover */}
             <div className="absolute inset-0 bg-linear-to-br from-purple-500/0 to-blue-500/0 group-hover:from-purple-500/5 group-hover:to-blue-500/5 rounded-2xl transition-all duration-300" />
 
@@ -209,6 +238,8 @@ export default function ProjectsSection() {
             </div>
           </motion.div>
         ))}
+
+        {/* see more  */}
       </div>
     </section>
   );

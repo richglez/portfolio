@@ -31,8 +31,7 @@ html {
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-neonFlicker: neonFlicker 2s infinite;
-
-  /* Keyframes personalizados (estos van FUERA de @theme) */
+  --animate-loading-bar: loading-bar 1.2s ease-in-out infinite;
 }
 
 /* Keyframes van en la capa base o sin capa */
@@ -68,6 +67,16 @@ html {
     text-shadow: none;
   }
 }
+
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
 
 
 
