@@ -17,7 +17,6 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     }),
   };
 
-
   const container = {
     hidden: {},
     show: {
