@@ -13,7 +13,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     show: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.12, duration: 0.9, },
+      transition: { delay: i * 0.12, duration: 0.9 },
     }),
   };
 
@@ -43,8 +43,6 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
       },
     },
   };
-
-
 
   return (
     <section

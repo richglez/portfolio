@@ -191,7 +191,8 @@ function HomePage() {
                       <Image
                         src="/hero.png"
                         alt="Hero Futuristic Abstract Technology"
-                        fill
+                        width={1920}
+                        height={1080}
                         priority
                         className="w-full h-full object-cover rounded-2xl mix-blend-screen opacity-60"
                       />
