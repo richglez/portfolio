@@ -57,7 +57,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           className="space-y-8"
         >
           {/* Container Title con gradiente */}
@@ -118,10 +118,20 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           </motion.div>
 
           {/* Buttons mejorados */}
-          <motion.div variants={item} className="flex flex-wrap gap-4">
+          <motion.div
+            variants={item}
+            initial="hidden"
+            whileInView="show"
+            custom={1}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{
+              duration: 0.35,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="flex flex-wrap gap-4"
+          >
             <motion.button
               onClick={() => setShowPreview(true)}
-              whileHover={{ scale: 1.05 }}
               className="
                 px-8 py-3.5 rounded-2xl
                 bg-linear-to-r from-purple-600 to-pink-600
@@ -130,7 +140,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
                 transition-all duration-300
                 font-semibold
                 flex items-center gap-3
-                group cursor-pointer active:scale-85
+                group cursor-pointer active:scale-85 hover:scale-107
               "
             >
               <span>View CV</span>
@@ -148,7 +158,6 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
               href="https://wa.me/525512017729?text=¡Hola%20Ricardo!%20Vi%20tu%20portfolio%20y%20me%20interesó%20tu%20trabajo%20como%20desarrollador."
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
               className="
                 px-8 py-3.5 rounded-2xl
                 bg-white/10 backdrop-blur-sm
@@ -156,7 +165,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
                 hover:bg-white/20 hover:border-purple-500/50
                 transition-all duration-300
                 font-semibold
-                flex items-center gap-3 active:scale-85
+                flex items-center gap-3 active:scale-85 hover:scale-107
               "
             >
               <span>Get in Touch</span>
@@ -210,14 +219,13 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
 
         {/* ================= RIGHT CONTAINER ================= */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 40 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{
-            duration: 0.9,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          whileHover={{ scale: 1.03, rotate: 0.2 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.3 }}
+          whileHover={{ scale: 1.04, rotate: 0.3 }}
+          transition={{ duration: 0.4 }}
+          custom={3}
           className="relative aspect-square w-140 h-140 mx-10"
         >
           {/* BLUR IMAGE BACKGROUND */}
@@ -228,12 +236,13 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           />
           {/* TOP IMAGE */}
           <motion.img
+            src={"/HAU1KitXoAApgsa.jpg"}
             variants={fadeUp}
-            custom={3}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.3 }}
-            src={"/HAU1KitXoAApgsa.jpg"}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 0.4 }}
+            custom={1}
             className="relative w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10 z-20"
           ></motion.img>
           {/* glow a la imagen sobrepuesta mas saturacion a la imgen*/}
