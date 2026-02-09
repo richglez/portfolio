@@ -29,7 +29,7 @@ function HomePage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         <section
           id="home"
-          className="min-h-screen scroll-mt-24 grid lg:grid-cols-2 gap-70 mb-120 items-center"
+          className=" items-center min-h-screen scroll-mt-24 grid gap-12 lg:grid-cols-2 lg:gap-24 mb-24 lg:mb-120"
         >
           {/* LEFT */}
           <StaggerContainer className="leftSide space-y-4">
@@ -182,7 +182,7 @@ function HomePage() {
           </StaggerContainer>
 
           {/* RIGHT IMAGE */}
-          <div className="rightSide relative w-full h-125">
+          <div className="relative w-full h-80 sm:h-105 lg:h-125">
             <div className="relative flex justify-center lg:justify-end items-center">
               <div className="relative w-full max-w-lg aspect-square">
                 <div className="absolute inset-0 glass rounded-3xl overflow-hidden border-white/5 shadow-2xl animate-float">
