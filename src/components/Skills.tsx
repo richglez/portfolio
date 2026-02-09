@@ -528,7 +528,7 @@ const SkillsSection = () => {
       className="min-h-screen scroll-mt-24 mb-160 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-20"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Container Title con gradiente */}
+        {/* Container --TITLE-- con gradiente */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -541,7 +541,7 @@ const SkillsSection = () => {
           <div className="h-1 w-24 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mt-4" />
         </motion.div>
 
-        {/* Contenido */}
+        {/* --Parrafo-- */}
         <motion.div className="mt-8">
           <p className="text-xl text-zinc-400 mb-12 max-w-2xl">
             <TypingText text="Technologies and tools that I know and still learing.!" />
