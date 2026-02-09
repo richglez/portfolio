@@ -1,16 +1,23 @@
 import { motion } from "framer-motion";
 
-export default function BlurBlob({ delay = 0 }) {
+export default function BlurBlob({ delay = 0, color = "primary" }) {
   return (
     <motion.div
-      className="absolute w-96 h-96 bg-primary/20 rounded-full blur-[120px]"
-      initial={{ x: -200, y: 0 }}
+      className={`
+        absolute
+        hidden lg:block
+        w-md h-112
+        bg-${color}/20
+        rounded-full
+        blur-[140px]
+      `}
+      initial={{ x: -150, y: 0 }}
       animate={{
-        x: [-200, 200, -150],
-        y: [0, -200, 100],
+        x: [-150, 200, -100],
+        y: [0, -150, 100],
       }}
       transition={{
-        duration: 20,
+        duration: 25,
         repeat: Infinity,
         ease: "easeInOut",
         delay,
