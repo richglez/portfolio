@@ -92,15 +92,28 @@ function LetsTalk() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
-            className="text-6xl font-bold tracking-tight mt-15"
+            className="mt-15 font-bold tracking-tight"
           >
-            Let&apos;s Talk
-            <motion.span className="ml-5 md:ml-8 bg-linear-to-r from-pink-700 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+            <span className="block text-5xl sm:text-6xl">Let&apos;s Talk</span>
+
+            <span
+              className="
+                block
+                mt-2
+                text-5xl sm:text-6xl
+                bg-linear-to-r
+                from-pink-700
+                via-purple-500
+                to-blue-500
+                bg-clip-text
+                text-transparent
+              "
+            >
               Contact to Me
-            </motion.span>
+            </span>
           </motion.h2>
 
-          <div className="h-1 w-24 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mt-1" />
+          <div className="h-1 w-24 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mt-5" />
 
           {/* Subtitle */}
           <motion.div
