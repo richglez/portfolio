@@ -523,7 +523,10 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="min-h-screen scroll-mt-24 pt-20 mb-160">
+    <section
+      id="skills"
+      className="min-h-screen scroll-mt-24 mb-160 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-20"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Container Title con gradiente */}
         <motion.div

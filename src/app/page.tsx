@@ -24,7 +24,7 @@ function HomePage() {
 
   return (
     <>
-      <main className="relative text-white px-75 pt-10">
+      <main className="relative text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-10">
         {/* Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         <section
@@ -57,8 +57,11 @@ function HomePage() {
             <motion.h1
               variants={fadeItem}
               className="flex items-baseline text-6xl md:text-8xl font-black tracking-tight leading-tight mb-1 md:mb-2"
-            >My
-            <motion.span className="ml-5 md:ml-8 gradient-text">Portfolio!.</motion.span>
+            >
+              My
+              <motion.span className="ml-5 md:ml-8 gradient-text">
+                Portfolio!.
+              </motion.span>
             </motion.h1>
 
             <motion.p

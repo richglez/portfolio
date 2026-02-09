@@ -74,7 +74,7 @@ function LetsTalk() {
   return (
     <section
       id="letstalk"
-      className="min-h-screen scroll-mt-24 py-5 px-75 text-white"
+      className="min-h-screen scroll-mt-24 py-5 text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-10"
     >
       <div className="grid lg:grid-cols-2 gap-20 items-center">
         {/* ================= LEFT COLUMN ================= */}

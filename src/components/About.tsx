@@ -48,7 +48,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     <section
       id="about"
       ref={ref}
-      className="min-h-screen scroll-mt-24 pt-20 mb-130 text-white px-75"
+      className="min-h-screen scroll-mt-24 mb-130 text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-20"
     >
       {/* MAIN CONTAINER */}
       <div className="grid lg:grid-cols-2 gap-20 items-center">
