@@ -82,7 +82,7 @@ function LetsTalk() {
           variants={fadeZoom}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           {/* Title */}
           <motion.h2
