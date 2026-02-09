@@ -24,7 +24,7 @@ function HomePage() {
 
   return (
     <>
-      <main className="relative text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-10">
+      <main className="relative text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 md:pt-10 pt-37">
         {/* Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         <section
