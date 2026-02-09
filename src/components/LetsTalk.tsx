@@ -141,7 +141,7 @@ function LetsTalk() {
                 >
                   {/* Name */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm text-white/70 group-hover:text-purple-400">
+                    <label className="text-sm text-slate-300 group-hover:text-purple-400">
                       Name
                     </label>
                     <input
@@ -155,7 +155,7 @@ function LetsTalk() {
 
                   {/* Email */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm text-white/70 group-hover:text-purple-400">
+                    <label className="text-sm text-slate-300 group-hover:text-purple-400">
                       Email
                     </label>
                     <input
@@ -169,7 +169,7 @@ function LetsTalk() {
 
                   {/* Message */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm text-white/70 group-hover:text-purple-400">
+                    <label className="text-sm text-slate-300 group-hover:text-purple-400">
                       Message
                     </label>
                     <textarea
@@ -199,16 +199,42 @@ function LetsTalk() {
                 </motion.form>
               ) : (
                 <motion.div
-                  key="success"
+                  key="rocket-success"
                   variants={successVariant}
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="flex flex-col items-center justify-center text-center gap-4 py-12"
+                  className="relative flex flex-col items-center justify-center text-center gap-4 py-12 overflow-hidden"
                 >
-                  <div className="text-5xl">🚀</div>
+                  {/* Rocket + Glow */}
+                  <motion.div
+                    className="relative text-5xl"
+                    initial={{ x: 0, y: 30, opacity: 0 }}
+                    animate={{
+                      x: [0, 20, 120, 260],
+                      y: [0, -10, -180, -360],
+                      rotate: [-10, -6, -2, 6],
+                      opacity: [1, 1, 1, 0],
+                    }}
+                    transition={{
+                      duration: 1.6,
+                      times: [0, 0.2, 0.7, 1],
+                      ease: "easeIn",
+                    }}
+                  >
+                    🚀
+                    {/* Glow */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.6 }}
+                      animate={{ opacity: [0, 0.7, 0], scale: [0.6, 1.6, 2.4] }}
+                      transition={{ duration: 1.4, ease: "easeOut" }}
+                      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+                 w-24 h-24 bg-purple-500/40 blur-3xl rounded-full -z-10"
+                    />
+                  </motion.div>
+
                   <h3 className="text-2xl font-semibold">Message sent!</h3>
-                  <p className="text-white/70">
+                  <p className="text-white/70 max-w-sm">
                     Thanks for reaching out. I’ll get back to you very soon.
                   </p>
                 </motion.div>
