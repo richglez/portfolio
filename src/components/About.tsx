@@ -51,7 +51,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
       className="min-h-screen scroll-mt-24 mb-130 text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-20"
     >
       {/* MAIN CONTAINER */}
-      <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="grid lg:grid-cols-2 gap-20 items-center ">
         {/* ================= LEFT ================= */}
         <motion.div
           variants={container}
@@ -226,7 +226,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           whileHover={{ scale: 1.04, rotate: 0.3 }}
           transition={{ duration: 0.4 }}
           custom={3}
-          className="relative aspect-square w-140 h-140 mx-10"
+          className="relative aspect-square md:w-140 md:h-140 md:mx-10 w-full" //w-full para que moviles ocupe el maximo ancho y se ajuste
         >
           {/* BLUR IMAGE BACKGROUND */}
           <motion.img
