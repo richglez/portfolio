@@ -29,7 +29,7 @@ function HomePage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         <section
           id="home"
-          className=" items-center min-h-screen scroll-mt-24 grid gap-12 lg:grid-cols-2 lg:gap-24 mb-24 lg:mb-120"
+          className=" items-center min-h-screen scroll-mt-40 grid gap-12 lg:grid-cols-2 lg:gap-24 mb-24 lg:mb-120 md:scroll-mt-24"
         >
           {/* LEFT */}
           <StaggerContainer className="leftSide space-y-4">
