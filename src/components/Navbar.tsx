@@ -39,9 +39,10 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeInOut" }}
+        style={{ originX: 0.5 }}
         className="
           w-full md:w-[70%] mx-auto
-          flex md:grid md:grid-cols-[auto_1fr_auto]
+          grid grid-cols-[auto_1fr_auto]
           items-center
           glass rounded-2xl
           px-4 md:px-8 py-4
@@ -69,10 +70,9 @@ export default function Navbar() {
         <a
           href={"/"}
           className="
-            absolute left-1/2 -translate-x-1/2
-            md:static md:translate-x-0
             text-xl md:text-2xl
             font-bold tracking-tight gradient-text
+            justify-self-center
           "
         >
           &lt;Rich Portfolio/&gt;
@@ -120,39 +120,38 @@ export default function Navbar() {
         </a>
       </motion.nav>
       <AnimatePresence>
-  {menuOpen && (
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="
         fixed inset-0 z-50
         bg-black/80 backdrop-blur-xl
         flex flex-col items-center justify-center
         gap-8 text-xl
       "
-    >
-      <button
-        onClick={() => setMenuOpen(false)}
-        className="absolute top-6 right-6 text-3xl text-white"
-      >
-        ✕
-      </button>
+          >
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-6 right-6 text-3xl text-white"
+            >
+              ✕
+            </button>
 
-      {["Home", "About", "Skills", "Projects"].map((item) => (
-        <a
-          key={item}
-          href={`#${item.toLowerCase()}`}
-          onClick={() => setMenuOpen(false)}
-          className="text-white font-semibold hover:text-purple-400 transition"
-        >
-          {item}
-        </a>
-      ))}
-    </motion.div>
-  )}
-</AnimatePresence>
-
+            {["Home", "About", "Skills", "Projects"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={() => setMenuOpen(false)}
+                className="text-white font-semibold hover:text-purple-400 transition"
+              >
+                {item}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
