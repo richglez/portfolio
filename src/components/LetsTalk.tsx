@@ -74,8 +74,9 @@ function LetsTalk() {
   return (
     <section
       id="letstalk"
-      className="min-h-screen scroll-mt-24 py-5 text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-10"
+      className="min-h-screen scroll-mt-24 mb-130 text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 overflow-x-hidden"
     >
+      {/* MAIN CONTAINER */}
       <div className="grid lg:grid-cols-2 gap-20 items-center">
         {/* ================= LEFT COLUMN ================= */}
         <motion.div
@@ -83,6 +84,7 @@ function LetsTalk() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
+          className="space-y-2"
         >
           {/* Title */}
           <motion.h2
@@ -90,7 +92,7 @@ function LetsTalk() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
-            className="text-[54px] font-bold tracking-tight mt-15"
+            className="text-6xl font-bold tracking-tight mt-15"
           >
             Let&apos;s Talk
             <motion.span className="ml-5 md:ml-8 bg-linear-to-r from-pink-700 via-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -118,7 +120,7 @@ function LetsTalk() {
             whileInView="visible"
             viewport={{ amount: 0.4 }}
             className="
-              mt-12 w-150 max-h-120
+              mt-12 md:w-150 max-h-120
               rounded-2xl
               bg-white/5 backdrop-blur-xl
               border border-white/10
@@ -247,7 +249,7 @@ function LetsTalk() {
         <motion.div
           whileHover={{ scale: 1.04, rotate: 0.3 }}
           transition={{ duration: 0.4 }}
-          className="relative aspect-square w-140 h-140 mx-10 mt-20"
+          className="relative aspect-square md:w-140 md:h-140 md:mx-10 md:mt-30 w-full" //w-full para que moviles ocupe el maximo ancho y se ajuste
         >
           <motion.img
             src="/Gemini_Generated_Image_vhxbwxvhxbwxvhxb.png"

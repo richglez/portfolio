@@ -48,11 +48,11 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
     <section
       id="about"
       ref={ref}
-      className="min-h-screen scroll-mt-24 mb-130 text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-20"
+      className="min-h-screen scroll-mt-24 mb-130 text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-20 overflow-x-hidden"
     >
       {/* MAIN CONTAINER */}
       <div className="grid lg:grid-cols-2 gap-20 items-center ">
-        {/* ================= LEFT ================= */}
+        {/* ================= LEFT SIDE ================= */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -69,7 +69,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
           >
             <motion.h2
               variants={item}
-              className="text-5xl lg:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent"
+              className="text-6xl font-bold tracking-tight bg-linear-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent"
             >
               About Me
             </motion.h2>
