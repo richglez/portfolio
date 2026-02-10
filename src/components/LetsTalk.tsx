@@ -74,7 +74,7 @@ function LetsTalk() {
   return (
     <section
       id="letstalk"
-      className="min-h-screen scroll-mt-24 mb-130 text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 overflow-x-hidden"
+      className="min-h-screen scroll-mt-24 mb-20 text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 overflow-x-hidden overflow-y-hidden"
     >
       {/* MAIN CONTAINER */}
       <div className="grid lg:grid-cols-2 gap-20 items-center">
