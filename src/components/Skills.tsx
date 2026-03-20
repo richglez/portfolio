@@ -57,7 +57,7 @@ const SkillsSection = () => {
             </svg>
           ),
           level: 35,
-          color: "from-gray-100 to-gray-300",
+          color: "from-gray-100 to-gray-400",
         },
         {
           name: "Tailwind CSS",
@@ -445,7 +445,7 @@ const SkillsSection = () => {
             ></Image>
           ),
           level: 20,
-          color: "from-teal-500 to-green-800",
+          color: "from-[#3162B4] to-[#3DDC84]",
         },
         {
           //
