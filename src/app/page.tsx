@@ -124,7 +124,7 @@ function HomePage() {
                 </svg>
               </a>
             </motion.div>
-            <div className="socials-icons pt-6 flex gap-4.5">
+            <div className="absolute socials-icons pt-6 flex gap-4.5">
               <motion.a
                 variants={fadeItem}
                 href="https://www.linkedin.com/in/ricardo-gonzalez-59736b2b7/"
