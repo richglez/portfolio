@@ -82,7 +82,7 @@ const AboutSection = forwardRef<HTMLElement>((props, ref) => {
             initial="hidden"
             whileInView="show"
             custom={1}
-            className="space-y-4"
+            className="space-y-4 overflow-x-hidden"
           >
             <motion.p
               variants={item}
