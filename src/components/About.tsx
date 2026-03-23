@@ -6,7 +6,7 @@ import TypingText from "@/components/TypingText";
 
 const AboutSection = forwardRef<HTMLElement>((props, ref) => {
   const [showPreview, setShowPreview] = useState(false);
-  const CV_PATH = "/cv/cv-RICARDO-GONZALEZ-spanish.pdf";
+  const CV_PATH = "/cv/cv-RICARDO-GONZALEZ-spanish(2026).pdf";
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
