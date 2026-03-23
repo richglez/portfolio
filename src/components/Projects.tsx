@@ -9,8 +9,9 @@ const projectPreviews: Record<string, string> = {
   "terapia-respiro-emocional-app": "/a0ed8048-125f-49c3-b217-f973d2c33eb3.png",
   portfolio: "/gemini-portfolio-hero-ia-version-glass.png",
   CajeroAutomatico: "/10873a6b-dbe6-475d-90c2-9b34815212d0.png",
+  MyNutrify:
+    "/mynutrify-presentation-canva-reactnative-glassmorphin-purple-desing-futuristicRealistic.png",
 };
-
 
 interface GitHubRepo {
   id: number;
@@ -52,7 +53,6 @@ export default function ProjectsSection() {
         // Reemplaza 'richglez' con tu username de GitHub
         const response = await fetch(
           "https://api.github.com/users/richglez/repos?sort=updated&per_page=6",
-
         );
         const data = await response.json();
         setRepos(data);
