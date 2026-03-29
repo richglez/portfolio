@@ -36,17 +36,17 @@ const SkillsSection = () => {
           color: "from-cyan-400 to-blue-500",
         },
         {
-          name: "Expo Go",
+          name: "Expo",
           icon: (
             <Image
               src="/expo-go-svg.svg"
-              alt="Expo Go logo"
+              alt="Expo logo"
               width={32}
               height={32}
               className="w-8 h-8 invert"
             />
           ),
-          level: 40,
+          level: 15,
           color: "from-[#27274e] to-[#c9c9ff]",
         },
         {
@@ -86,7 +86,7 @@ const SkillsSection = () => {
               />
             </svg>
           ),
-          level: 50,
+          level: 45,
           color: "from-red-600 to-red-900",
         },
         {
@@ -504,7 +504,7 @@ const SkillsSection = () => {
               className="w-8 h-8" // 32px = 8 en Tailwind
             ></Image>
           ),
-          level: 95,
+          level: 90,
           color: "from-orange-600 to-amber-800",
         },
       ],
