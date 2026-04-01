@@ -50,11 +50,8 @@ export default function ProjectsSection() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        // Reemplaza 'richglez' con tu username de GitHub
-        const response = await fetch(
-          "https://api.github.com/users/richglez/repos?sort=updated&per_page=6",
-        );
-        const data = await response.json();
+        const res = await fetch("/api/github");
+        const data = await res.json();
         setRepos(data);
       } catch (error) {
         console.error("Error fetching repos:", error);
