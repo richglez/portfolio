@@ -1,5 +1,4 @@
-// src\app\api\github\route.ts
-// Endpoint para obtener los repositorios de GitHub
+// src/app/api/github/route.ts
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -10,10 +9,20 @@ export async function GET() {
         headers: {
           "Content-Type": "application/json",
           "User-Agent": "richglez-portfolio",
+          // PASE DE ACCESO A LA API DE GITHUB
+          Authorization: `token ${process.env.GITHUB_TOKEN}`,
         },
-        next: { revalidate: 3600 }, // 3600 segundos
+        next: { revalidate: 3600 },
       },
     );
+
+    // Es buena práctica verificar si GitHub respondió bien antes de seguir
+    if (!res.ok) {
+      return NextResponse.json(
+        { error: "GitHub API error" },
+        { status: res.status },
+      );
+    }
 
     const data = await res.json();
     return NextResponse.json(data);
