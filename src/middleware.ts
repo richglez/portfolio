@@ -1,4 +1,3 @@
-// src/middleware.ts
 import { NextResponse, NextRequest } from "next/server";
 
 const ALLOWED_ORIGINS = [

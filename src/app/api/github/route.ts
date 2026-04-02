@@ -1,22 +1,31 @@
-// src/app/api/github/route.ts
 import { NextResponse } from "next/server";
+import { rateLimit } from "@/lib/rateLimit";
 
-export async function GET() {
+export async function GET(req: Request) {
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0] ||
+    req.headers.get("x-real-ip") ||
+    "unknown";
+
+  // 🚫 Rate limit antes del fetch
+  if (!rateLimit(ip)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   try {
     const res = await fetch(
-      "https://api.github.com/users/richglez/repos?sort=updated&per_page=6", // URL de la API de GitHub para obtener los repositorios
+      "https://api.github.com/users/richglez/repos?sort=updated&per_page=6",
       {
         headers: {
           "Content-Type": "application/json",
           "User-Agent": "richglez-portfolio",
-          // PASE DE ACCESO A LA API DE GITHUB
-          Authorization: `token ${process.env.GITHUB_TOKEN}`,
+          Authorization: `token ${process.env.GITHUB_TOKEN}`, // Token protegido (process.env)
         },
-        next: { revalidate: 3600 }, // API responde instantáneamente porque guarda los datos en caché durante una hora.
+        next: { revalidate: 3600 }, // Cache (revalidate)
       },
     );
 
-    // Es buena práctica verificar si GitHub respondió bien antes de seguir
+    // Manejo de errores del fetch de GitHub
     if (!res.ok) {
       return NextResponse.json(
         { error: "GitHub API error" },
@@ -25,7 +34,15 @@ export async function GET() {
     }
 
     const data = await res.json();
-    return NextResponse.json(data);
+
+    // 🔐 Headers de seguridad (PRO)
+    const response = NextResponse.json(data);
+    response.headers.set("X-Frame-Options", "DENY");
+    response.headers.set("X-Content-Type-Options", "nosniff");
+    response.headers.set("Referrer-Policy", "no-referrer");
+    response.headers.set("Cache-Control", "s-maxage=3600"); // Mejora caching en Vercel/CDN
+
+    return response;
   } catch (error) {
     console.error("Error fetching repos:", error);
     return NextResponse.json(
