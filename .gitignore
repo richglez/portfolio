@@ -45,3 +45,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# IDEs and editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# System files adicionales
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Cache de herramientas
+.eslintcache
+.stylelintcache
+
+# Testing
+.nyc_output
