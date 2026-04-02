@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const res = await fetch(
-      "https://api.github.com/users/richglez/repos?sort=updated&per_page=6",
+      "https://api.github.com/users/richglez/repos?sort=updated&per_page=6", // URL de la API de GitHub para obtener los repositorios
       {
         headers: {
           "Content-Type": "application/json",
@@ -12,7 +12,7 @@ export async function GET() {
           // PASE DE ACCESO A LA API DE GITHUB
           Authorization: `token ${process.env.GITHUB_TOKEN}`,
         },
-        next: { revalidate: 3600 },
+        next: { revalidate: 3600 }, // API responde instantáneamente porque guarda los datos en caché durante una hora.
       },
     );
 
