@@ -9,6 +9,7 @@ import { motion, type Variants } from "framer-motion";
 import StaggerContainer from "@/components/StaggerContainer";
 import WordReveal from "@/components/WordReveal";
 import LetsTalk from "@/components/LetsTalk";
+import MarqueeComponent from "@/components/Marquee";
 
 function HomePage() {
   const fadeItem: Variants = {
@@ -255,6 +256,8 @@ function HomePage() {
       <ProjectsSection />
 
       <LetsTalk />
+
+      <MarqueeComponent />
     </>
   );
 }

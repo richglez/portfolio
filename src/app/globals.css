@@ -33,6 +33,7 @@ html {
   --animate-float: float 6s ease-in-out infinite;
   --animate-neonFlicker: neonFlicker 2s infinite;
   --animate-loading-bar: loading-bar 1.2s ease-in-out infinite;
+  --animate-marquee-scroll: marquee-scroll 50s linear infinite;
 }
 
 /* Keyframes van en la capa base o sin capa */
@@ -78,8 +79,43 @@ html {
   }
 }
 
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-scroll {
+    animation: none;
+  }
+}
+
 
 @layer utilities {
+  /* Marquee: fundido en bordes sin color de fondo (respeta el mesh de la página) */
+  .marquee-fade-edges {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 6%,
+      black 94%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 6%,
+      black 94%,
+      transparent
+    );
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+  }
+
   .neon-bar {
     box-shadow:
       0 0 10px rgba(168, 85, 247, 0.6),
