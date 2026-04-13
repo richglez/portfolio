@@ -41,7 +41,7 @@ export default function MarqueeComponent() {
 
   return (
     <section
-      className="relative w-full py-8 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-20"
+      className="relative w-full py-8 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-75 pt-30 mb-20 "
       aria-label="Tecnologías y herramientas"
     >
       <p className="mb-6 text-center text-[10px] font-mono uppercase tracking-[0.35em] text-slate-500">
