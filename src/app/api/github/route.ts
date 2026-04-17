@@ -19,7 +19,7 @@ export async function GET(req: Request) {
         headers: {
           "Content-Type": "application/json",
           "User-Agent": "richglez-portfolio",
-          Authorization: `token ${process.env.GITHUB_TOKEN}`, // Token protegido (process.env)
+          Authorization: `token ${process.env.GITHUB_TOKEN}`, // Token protegido
         },
         next: { revalidate: 3600 }, // Cache (revalidate)
       },

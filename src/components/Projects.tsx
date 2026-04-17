@@ -50,7 +50,7 @@ export default function ProjectsSection() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const res = await fetch("/api/github"); // No se expone tokens
+        const res = await fetch("/api/github"); 
 
         // Manejo de errores
         if (!res.ok) {
