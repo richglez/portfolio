@@ -14,6 +14,7 @@ const TECHS: { name: string; icon: string }[] = [
   { name: "Express", icon: "express/express-original" },
   { name: ".NET", icon: "dotnetcore/dotnetcore-original" },
   { name: "Python", icon: "python/python-plain" },
+  { name: "Django", icon: "django/django-plain" },
   { name: "FastAPI", icon: "fastapi/fastapi-plain" },
   { name: "Java", icon: "java/java-plain" },
   { name: "Next.js", icon: "nextjs/nextjs-plain" },
