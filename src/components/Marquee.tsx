@@ -19,6 +19,7 @@ const TECHS: { name: string; icon: string }[] = [
   { name: "Java", icon: "java/java-plain" },
   { name: "Next.js", icon: "nextjs/nextjs-plain" },
   { name: "Tailwind", icon: "tailwindcss/tailwindcss-original" },
+  { name: "Bootstrap", icon: "bootstrap/bootstrap-plain" },
   { name: "Angular", icon: "angularjs/angularjs-plain" },
   { name: "PHP", icon: "php/php-plain" },
   { name: "Docker", icon: "docker/docker-original" },
