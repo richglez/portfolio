@@ -29,6 +29,8 @@ interface GitHubRepo {
 export default function ProjectsSection() {
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState(true);
+  const controller = new AbortController();
+  setTimeout(() => controller.abort(), 5000);
 
   const fadeZoom: Variants = {
     hidden: {
@@ -50,7 +52,7 @@ export default function ProjectsSection() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const res = await fetch("/api/github"); 
+        const res = await fetch("/api/github", { signal: controller.signal });
 
         // Manejo de errores
         if (!res.ok) {
