@@ -129,7 +129,7 @@ function HomePage() {
             <div className="relative z-10 socials-icons pt-6 pb-4 px-2 -mx-2  flex gap-4.5">
               <motion.a
                 variants={fadeItem}
-                href="https://www.linkedin.com/in/ricardo-gonzalez-59736b2b7/"
+                href="https://www.linkedin.com/in/richglez-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex border border-purple-500 shadow-2xl shadow-purple-500 py-4 px-4 rounded-2xl relative overflow-hidden group"
