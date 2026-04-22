@@ -7,8 +7,8 @@ const ContentSecurityPolicy = `
   img-src 'self' https: data:;
   font-src 'self' https:;
   connect-src 'self' https://api.github.com;
-  frame-ancestors 'none';
-  object-src 'none';
+  frame-ancestors 'self';
+  object-src 'self';
   base-uri 'self';
 `;
 
