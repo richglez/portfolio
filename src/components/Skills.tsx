@@ -186,6 +186,20 @@ const SkillsSection = () => {
           level: 20,
           color: "from-purple-500 via-blue-500 to-yellow-400",
         },
+        {
+          name: "Spring",
+          icon: (
+            <Image
+              src="/icons8-spring-boot-480.svg"
+              alt="spring-logo"
+              width={32}
+              height={32}
+              className="w-8 h-8"
+            />
+          ),
+          level: 20,
+          color: "from-[#69B72A] to-[#217006]",
+        },
       ],
     },
     {
